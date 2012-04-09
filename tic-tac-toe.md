@@ -28,7 +28,7 @@ a chat window. We type in something and it replies:
 ```
 >>> 5
 5
-`
+```
 
 If I give it a number, it'll reply with that number. It can handle
 arithmetic:
