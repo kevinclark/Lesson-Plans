@@ -28,9 +28,9 @@ Mac OSX has python built in.
 
 ### Starting the interpreter and basics
 
-On mac with Lion, you're going to open the python interpreter by hitting
-command-space, typing terminal, and hitting enter. Then you're going to
-type 'idle' and hit enter.
+On mac with Lion or Snow Leopard, you're going to open the python 
+interpreter by hitting command-space, typing terminal, and hitting 
+enter. Then you're going to type 'idle' and hit enter.
 
 On mac with Leopard, you're going to open the python 
 interpreter by hitting command-space, typing terminal, and hitting enter.
