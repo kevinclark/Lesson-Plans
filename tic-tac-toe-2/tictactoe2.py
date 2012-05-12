@@ -38,12 +38,12 @@ def prompt_for_space():
     return space
 
 
-def human_players(mark):
+def human_player(mark):
     print "It's %s's turn - where would you like to play, %s?" % (mark, mark)
     return prompt_for_space()
 
 
-def play(mark='X', takeTurn=human_players):
+def play(mark='X', takeTurn=human_player):
     print "\nThe board looks like this:"
     print_board()
     print
@@ -59,6 +59,23 @@ def play(mark='X', takeTurn=human_players):
     elif not [space for space in board if space is None]:
         print "It's a draw!"
     else:
-        play('O' if mark == 'X' else 'X')    
+        play('O' if mark == 'X' else 'X', takeTurn)    
 
-play()
+
+def withAComputerPlayer(mark):
+    if mark == 'X':
+        return human_player(mark)
+    else:
+        space = computer_player(mark)
+        print "The computer picks space %s" % space
+        return space
+
+
+def computer_player(mark):
+    spaceNum = 0
+    for space in board:
+        if space is None:
+            return spaceNum
+        spaceNum += 1
+
+play(takeTurn=withAComputerPlayer)
