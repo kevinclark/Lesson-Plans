@@ -131,8 +131,23 @@ square brackets and give the position we want to lookup:
 ```
 
 For those of you that have been to the other python sessions, everything
-so far is something you've seen. Now we're going to talk about one new way to
-store information today - a dictionary.
+so far is something you've seen. Now we're going to do a couple new
+things.
+
+If we want to find out if something is in the list or not,
+we can ask python with the word 'in'.
+
+```
+>>> 'chocolate' in ['chocolate', 'vanilla', 'cookies and cream']
+True
+>>> 'cheese' in ['chocolate', 'vanilla', 'cookies and cream']
+False
+```
+
+'in' is going to help us figure out where the computer should go when it
+plays tic tac toe, so remember it.
+
+Now we're going to talk about one new way to store information - a dictionary.
 
 The dictionaries we use at home and school and work hold words and their
 meanings. If you lookup the word 'cat' in the dictionary, you find that
@@ -164,3 +179,44 @@ like this:
 >>> {'food': 'pizza', 'color': 'blue'}
 {'food': 'pizza', 'color': 'blue'}
 ```
+
+This is more than I'd like to type out over and over, so I'm going to
+give it a shorter name. I can do that with the single equals sign. On
+the left goes the name I want to give the thing on the right:
+
+```
+>>> favs = {'food': 'pizza', 'color': 'blue'}
+{'food': 'pizza', 'color': 'blue'}
+>>> favs['color']
+'blue'
+```
+
+### Running the Game
+
+Now that we know how to talk to the computer, let's get to the game.
+First, we need to open the file that explains how to play. Click on
+File, then Open, then find the tic-tac-toe-2 directory in the bundle you
+downloaded from the web. Finally, click on `tictactoe2.py` and then
+open.
+
+
+There's a lot of stuff in here, but we're only going to worry about the
+code at the very top - the block that says 'def computer_player'. That
+section is the code that is run when it's time for the computer to play.
+Think of it as the place where we can list instructions for how it
+should make its decision.
+
+Before we talk about how that works, you should play the game. To do
+that, open the Run menu and click Run Module. It should open the
+interpreter again, and ask you to play. Make sure to click on the
+interpreter window when this happens or you'll still be in the other
+window. If it opens the interpreter and doesn't print the board, make
+sure you're clicked on the interpreter and hit the enter key and then
+the board should show up. You can play by putting in the number of the
+square you'd like to make a mark in.
+
+[Ed note: Here I'm going to remind them about our numbering scheme
+(which is mentioned in the file) and demonstrate how to play on the
+board. ]
+
+
