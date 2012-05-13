@@ -49,8 +49,8 @@ def win_by_vertical(mark):
 
 
 def win_by_horizontal(mark):
-  """Does the player with a given mark win on the rows?"""
-	return (board[0] == mark and board[1] == mark and board[2] == mark) or (board[3] == mark and board[4] == mark and board[5] == mark) or (board[6] == mark and board[7] == mark and board[8] == mark)
+    """Does the player with a given mark win on the rows?"""
+    return (board[0] == mark and board[1] == mark and board[2] == mark) or (board[3] == mark and board[4] == mark and board[5] == mark) or (board[6] == mark and board[7] == mark and board[8] == mark)
 
 
 def validate_move(space):
