@@ -67,7 +67,7 @@ def validate_move(space):
 def prompt_for_space():
     """Ask a player for a space until they give one that's legal"""
     space = None
-    
+
     try:
         space = int(raw_input("Give me a space number from 0 to 8 (and then hit enter): "))
     except ValueError:
@@ -76,7 +76,7 @@ def prompt_for_space():
 
     if not validate_move(space):
         return prompt_for_space()
-    
+
     return space
 
 
@@ -97,7 +97,7 @@ def play(mark='X', takeTurn=human_player):
     print
 
 
-    space = takeTurn(mark)               
+    space = takeTurn(mark)
     board[space] = mark
 
     if win_by_diagonal(mark) or win_by_horizontal(mark) or win_by_vertical(mark):
