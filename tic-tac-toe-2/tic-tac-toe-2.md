@@ -291,4 +291,37 @@ a mark in the first place it can. That makes it really bad at defense,
 so not much of an opponent. We'd like it to be able to put up a
 challenge, so it should respond to what we're doing.
 
+So let's make a change to `computer_player`. Go ahead and replace what's
+in `computer_player` with this, and then we'll talk about what it means:
+
+```
+def computer_player(world):
+    if 6 in world['xs'] and 7 in world['xs']:
+        return 8
+
+    return world['empty'][0]
+```
+
+Here we're using a new idea - the `if` statement. If let's us tell the
+computer to do things under certain conditions. We can read this as
+saying 'if 6 is in the list of places that X has gone and 7 is in the
+list of places that X has gone, then the computer should choose space
+8'. Go ahead and try the game - make marks at 6 and 7, and see that this
+is what actually happens.
+
+Neat, huh? You've just taught the computer to react to a player about to
+win on the bottom row. Let's do it again for the first column:
+
+
+```
+def computer_player(world):
+    if 6 in world['xs'] and 7 in world['xs']:
+        return 8
+
+    if 0 in world['xs'] and 3 in world['xs']:
+        return 6
+
+    return world['empty'][0]
+```
+
 
