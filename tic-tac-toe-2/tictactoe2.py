@@ -118,10 +118,10 @@ def withAComputerPlayer(mark):
     if mark == 'X':
         return human_player(mark)
     else:
-        world = {}
         xs = [ idx for idx, space in enumerate(board) if space == 'X' ]
         os = [ idx for idx, space in enumerate(board) if space == 'O' ]
         empty = [ idx for idx, space in enumerate(board) if space is None ]
+
         space = computer_player({'xs': xs, 'os': os, 'empty': empty})
         print "The computer picks space %s" % space
         return space
