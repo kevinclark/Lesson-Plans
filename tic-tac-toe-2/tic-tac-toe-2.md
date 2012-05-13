@@ -118,9 +118,9 @@ Sometimes we number things in lists - python does this too. But python
 numbers lists starting with zero. So if we looked at the numbers python
 gave the items in my list of ice cream flavors, it would look like this:
 
-0. 'chocolate'
-1. 'vanilla'
-2. 'cookies and cream'
+* 0 - 'chocolate'
+* 1 - 'vanilla'
+* 2 - 'cookies and cream'
 
 When we want to find what item is at a place in the list, we use the
 square brackets and give the position we want to lookup:
