@@ -249,3 +249,46 @@ list of spaces where the X player has gone. 'os' points to the list of
 spaces where the 'O' player has gone. And 'empty' points to the list of
 spaces where nobody has gone.
 
+If we look back at what 'computer_player' is doing, it's a combination
+of things we learned about before:
+
+```
+    return world['empty'][0]
+```
+
+'return' is our way of telling python that it should stop running the
+current function and give the thing to the right of return to whatever started it.
+We call that the 'result' of the function. In our case, the result is
+what we get when we lookup the 'empty' key in the world dictionary
+(which will be the list of empty spaces), and then look up the item in
+the 0th space (the front) of the list. In steps, it goes like this
+(reading from left to right):
+
+`world` looks like:
+```
+{'xs': [4], 'os': [], 'empty': [0, 1, 2, 3, 5, 6, 7, 8]}
+```
+
+To the right of `world` is square brackets with 'empty' in them, so the
+result of that lookup is going to be the list:
+
+```
+[0, 1, 2, 3, 5, 6, 7, 8]
+```
+
+To the right of that is another set of square brackets with a 0 in it.
+So it's just like doing:
+
+
+```
+[0, 1, 2, 3, 5, 6, 7, 8][0]
+```
+
+And that's going to be the first item in the list - in this case, 0.
+
+So that's the whole strategy for the current computer player - it makes
+a mark in the first place it can. That makes it really bad at defense,
+so not much of an opponent. We'd like it to be able to put up a
+challenge, so it should respond to what we're doing.
+
+
