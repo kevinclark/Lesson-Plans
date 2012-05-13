@@ -3,9 +3,16 @@
 Today, we're going to take an existing tic tac toe game and teach the
 computer to play with us.
 
+If you'd like to follow along, or move ahead, the lesson plan can be
+found at https://github.com/kevinclark/Lesson-Plans/blob/master/tic-tac-toe-2/tic-tac-toe-2.md
+
 
 
 ### Installation
+
+#### Downloading code
+
+To download the game we'll be basing our code on, please go to https://github.com/kevinclark/Lesson-Plans/zipball/master
 
 #### Windows
 On windows, download and run the python 2.7 installer from
@@ -36,6 +43,7 @@ type 'idle' and hit enter.
 
 On windows, you're going to open the python interpreter by hitting the
 windows key, typeing 'idle', and hit enter.
+
 
 
 
