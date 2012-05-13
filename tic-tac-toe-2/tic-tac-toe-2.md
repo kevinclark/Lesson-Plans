@@ -225,9 +225,10 @@ Let's look at how it's making decisions. As I said before, it's
 controlled by this thing labeled 'computer_player' in our game file.
 That thing is called a function, and it's the instructions for choosing
 where the computer player is going to make a mark. When that runs, it's
-given a dictionary that explains what the world looks like. Let's print
-out the 'world' so we can understand what information it has to make a
-decision. To do this, type this line underneath 'def computer_player':
+given a dictionary that explains what the game world looks like. Remember
+that the computer doesn't know anything you haven't told it directly.
+Let's print out the 'world' so we can understand what information it has
+to make a decision. To do this, type this line underneath 'def computer_player':
 
 ```
 print world
