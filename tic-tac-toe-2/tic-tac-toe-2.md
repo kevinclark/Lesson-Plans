@@ -220,3 +220,32 @@ square you'd like to make a mark in.
 board. ]
 
 
+You probably noticed that the computer isn't very good at tic tac toe.
+Let's look at how it's making decisions. As I said before, it's
+controlled by this thing labeled 'computer_player' in our game file.
+That thing is called a function, and it's the instructions for choosing
+where the computer player is going to make a mark. When that runs, it's
+given a dictionary that explains what the world looks like. Let's print
+out the 'world' so we can understand what information it has to make a
+decision. To do this, type this line underneath 'def computer_player':
+
+```
+print world
+```
+
+Make sure to hit tab to indent it to line up with the line that starts
+with 'return'.
+
+When you're done, go back to 'Run' and click 'Run Module'. It will ask
+you to save - say OK. Go ahead and start playing again. Now you should
+notice that when the computer goes, a line like this shows up:
+
+```
+{'xs': [4], 'os': [], 'empty': [0, 1, 2, 3, 5, 6, 7, 8]}
+```
+
+This is a dictionary that describes our game world. 'xs' points to the
+list of spaces where the X player has gone. 'os' points to the list of
+spaces where the 'O' player has gone. And 'empty' points to the list of
+spaces where nobody has gone.
+
