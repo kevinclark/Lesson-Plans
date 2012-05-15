@@ -43,13 +43,11 @@ def print_board():
     print_board_picture(row3)
         
 def print_board_picture(row):
-    count = 0
-    for r1 in row:
+    for idx, r1 in enumerate(row):
         if r1 == None:
             r1 = ' '
         print r1,
-        count += 1
-        if count < 3:
+        if idx < 2:
             print "|",
     print ''
 
