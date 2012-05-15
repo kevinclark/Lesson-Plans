@@ -32,10 +32,26 @@ def computer_player(world):
 board = [None, None, None, None, None, None, None, None, None]
 
 def print_board():
-    """Print the board, a row at a time"""
-    print board[0:3]
-    print board[3:6]
-    print board[6:9]
+    """Print the board, a row at a time""" 
+    row1 = board[0:3]
+    print_board_picture(row1)
+    print '----------'
+    row2 = board[3:6]
+    print_board_picture(row2)
+    print '----------'
+    row3 = board[6:9]
+    print_board_picture(row3)
+        
+def print_board_picture(row):
+    count = 0
+    for r1 in row:
+        if r1 == None:
+            r1 = ' '
+        print r1,
+        count += 1
+        if count < 3:
+            print "|",
+    print ''
 
 
 def win_by_diagonal(mark):
