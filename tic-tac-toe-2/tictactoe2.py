@@ -100,7 +100,7 @@ def human_player(mark):
     return prompt_for_space()
 
 
-def play(mark='X', takeTurn=human_player):
+def play(mark='X', take_turn=human_player):
     """
     A turn in the game. By default, plays with two human players, starting with
     'X'. Pass an alternative takeTurn function to play with a different set of
@@ -111,7 +111,7 @@ def play(mark='X', takeTurn=human_player):
     print
 
 
-    space = takeTurn(mark)
+    space = take_turn(mark)
     board[space] = mark
 
     if win_by_diagonal(mark) or win_by_horizontal(mark) or win_by_vertical(mark):
@@ -142,7 +142,7 @@ def with_a_computer_player(mark):
 
 
 # When we run the module, play with a computer
-play(takeTurn=with_a_computer_player)
+play(take_turn=with_a_computer_player)
 
 # Comment out the line above and uncomment this one to play with two people
 # play()
