@@ -124,7 +124,7 @@ def play(mark='X', takeTurn=human_player):
         play('O' if mark == 'X' else 'X', takeTurn)    
 
 
-def withAComputerPlayer(mark):
+def with_a_computer_player(mark):
     """
     Use a computer player (controlled by the computer_player function) for
     the 'O' player and a human player for 'X'.
@@ -142,7 +142,7 @@ def withAComputerPlayer(mark):
 
 
 # When we run the module, play with a computer
-play(takeTurn=withAComputerPlayer)
+play(takeTurn=with_a_computer_player)
 
 # Comment out the line above and uncomment this one to play with two people
 # play()
