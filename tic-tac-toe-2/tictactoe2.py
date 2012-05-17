@@ -103,7 +103,7 @@ def human_player(mark):
 def play(mark='X', take_turn=human_player):
     """
     A turn in the game. By default, plays with two human players, starting with
-    'X'. Pass an alternative takeTurn function to play with a different set of
+    'X'. Pass an alternative take_turn function to play with a different set of
     players.
     """
     print "\nThe board looks like this:"
@@ -121,7 +121,7 @@ def play(mark='X', take_turn=human_player):
     elif not [space for space in board if space is None]:
         print "It's a draw!"
     else:
-        play('O' if mark == 'X' else 'X', takeTurn)    
+        play('O' if mark == 'X' else 'X', take_turn)    
 
 
 def with_a_computer_player(mark):
