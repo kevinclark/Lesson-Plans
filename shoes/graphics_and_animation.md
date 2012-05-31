@@ -84,7 +84,7 @@ Now let's use some different shapes to finish our face.
 		@rightEye = oval 450, 150, 50, 75, :fill => "#D8E8F2"
 		@leftEyeBall = oval 460, 190, 15, 15, :fill => "444444"
 		@mouth = rect 295, 400, 275, 50, :fill => "#CC4572"
-		@nose = star 420, 300, 5, 50, 10, :fill => "#EEEEEE", :rotate => 25
+		@nose = star 420, 300, 5, 50, 10, :fill => "#EEEEEE"
 		@name = title "George Clooney", :left => 250, :top => 540
 	end
 
