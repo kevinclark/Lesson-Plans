@@ -93,3 +93,135 @@ height. Stars (star) takes the following parameters: left, top, number of
 points, diameter of the outside points, diameter of the inside points. Drawing
 text is a little different: you specify the text first, then you have to tell
 it that you are giving it numbers for the left and top.
+
+### Animation
+
+Now we're going to learn how to make our drawings move.
+
+Start by making a new file and saving it as "Demo2.rb". Here's the starting
+code to make a window again:
+
+	Shoes.app :width => 800, :height => 600 do
+	end
+
+Go ahead and add a shape that we can animate. Put it somewhere in the middle
+of the screen.  I'm going to call mine "ball", and make it a circle:
+
+	Shoes.app :width => 800, :height => 600 do
+		@ball = oval 350, 250, 100, 100, :fill => "#789789"
+	end
+
+Now let's add some animation!
+
+	Shoes.app :width => 800, :height => 600 do
+		@ball = oval 350, 250, 100, 100, :fill => "#789789"
+	
+		animate 30 do
+		end
+	end
+
+This tells Shoes to run an animation, but it doesn't tell it what to do when
+then animation runs.  Let's add some code to move the ball.
+
+	Shoes.app :width => 800, :height => 600 do
+		@ball = oval 350, 250, 100, 100, :fill => "#789789"
+	
+		animate 30 do
+			@ball.top += 5
+		end
+	end
+
+Now Shoes will move the top of the ball down by 5 pixels 30 times every
+second. See if you can make the ball move up and to the left or right also.
+You can also try adding more shapes and making them all move at the same time.
+
+You may be familiar with "if" statements from previous programming lessons. We
+can use an "if" statement to stop the ball from moving off the screen.
+
+	Shoes.app :width => 800, :height => 600 do
+		@ball = oval 350, 250, 100, 100, :fill => "#789789"
+	
+		animate 30 do
+			if @ball.top < 500
+				@ball.top += 5
+			end
+		end
+	end
+
+Now Shoes only moves the ball if it's top is less than 500, so the ball will
+stop when it's top gets to 500. I know that the height of the ball is 100, so
+that will mean that the bottom of the ball will be at 600, right at the bottom
+of the screen. We could also write "`if @ball.top + @ball.height < 600`" to
+make Shoes do the calculation for us.
+
+### Using Mouse input
+
+Now let's learn how to respond to mouse clicks in our program.
+
+	Shoes.app :width => 800, :height => 600 do
+		@ball = oval 350, 250, 100, 100, :fill => "#789789"
+	
+		animate 30 do
+			if @ball.top + @ball.height < 600
+				@ball.top += 5
+			end
+		end
+	
+		click do |button, x, y|
+			@ball.left = x - 50
+			@ball.top = y - 50
+		end
+	end
+
+Shoes will run the `click` block whenever the mouse is clicked in our window.
+When this happens there are three pieces of information you can use in your
+code: `x` and `y` are the pixel positions of where the mouse was clicked, and
+`button` is a number that tells which mouse button was clicked.
+
+In the code above, I've made clicking the mouse move the ball to where the
+mouse was clicked. I subtracted 50 (half the width and height) so that the
+center of the ball will go where the mouse was pointing.
+
+### Using variables for advanced animation
+
+In the examples above, we've used variables (like `@ball`) to store the shapes
+we've created. We can also use variables to store numbers that we can use to
+do more complicated animations. Let's make a variable to hold the current
+speed of the ball so that we can make a bouncing animation.
+
+	Shoes.app :width => 800, :height => 600 do
+		@ball = oval 350, 250, 100, 100, :fill => "#789789"
+		@ballSpeed = 0
+	
+		animate 30 do
+			@ball.top += @ballSpeed
+			@ballSpeed += 1
+			if @ball.top + @ball.height > 600
+				@ballSpeed = -@ballSpeed
+			end
+		end
+	
+		click do |button, x, y|
+			@ball.left = x - @ball.width/2
+			@ball.top = y - @ball.height/2
+			@ballSpeed = 0
+		end
+	end
+
+Here's how the bouncing works: we keep a variable (`@ballSpeed`) that tells
+how fast the ball is moving. On each step of the animation, we move the ball
+by however much the speed is (the faster the speed is, the farther the ball
+will move). Then we add to the speed (this simulates gravity). Then we check
+if the ball has hit the bottom of the screen, and if it has, we make the speed
+negative so that it will start going up (simulating the bounce).
+
+### Challenge Problems
+
+That's the end of the lesson!  Here are a few challenging things you can try on your own (or with the help of another programmer).
+
+* Make several shapes all bounce on the screen
+* Make a shape that bounces off the left, right, or top of the screen
+* Make a mouse click control several different shapes
+* Make a shape that flies off the screen and enters from the other side
+* Make a shape that flies around in the middle of the screen without bouncing
+  off the edges
