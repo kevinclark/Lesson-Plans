@@ -13,7 +13,8 @@ Shoes.app :width => 800, :height => 600 do
         if (650..750).include? x
           if (50..150).include? y
             stroke green
-          elsif (200..300).include? y
+          end
+          if (200..300).include? y
             stroke blue
           end
         end

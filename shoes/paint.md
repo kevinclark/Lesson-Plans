@@ -144,7 +144,8 @@ first one is the same as my green and the second is the same as my blue.
         if (650..750).include? x
           if (50..150).include? y
             stroke "#00FF00"
-          elsif (200..300).include? y
+          end
+          if (200..300).include? y
             stroke "#0000FF"
           end
         end
