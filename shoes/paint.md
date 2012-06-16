@@ -145,9 +145,6 @@ first one is the same as my green and the second is the same as my blue.
           if (50..150).include? y
             stroke "#00FF00"
           end
-          if (200..300).include? y
-            stroke "#0000FF"
-          end
         end
 
       end
@@ -172,10 +169,25 @@ If it is, we need to figure out which rectangle the mouse is over. We do
 that by looking at how far down the page the mouse is. Our first
 rectangle starts at 50 and is 100 tall, so we say "is the position of
 the mouse between 50 and 150 down?" If it is, then we use the `stroke`
-word to set the color to the color of the first rectangle. Then we do
-the same thing for the second rectangle which starts at 200 and goes for
+word to set the color to the color of the first rectangle. Let's do
+the same thing for the second rectangle. It starts at 200 and goes for
 100 (to 300).
 
+
+    click do |button, x, y|
+      if button == 1
+
+        if (650..750).include? x
+          if (50..150).include? y
+            stroke "#00FF00"
+          end
+          if (200..300).include? y
+            stroke "#0000FF"
+          end
+        end
+
+      end
+    end
 
 
 Other things to try:
