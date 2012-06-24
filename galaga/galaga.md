@@ -84,7 +84,7 @@ Space is a dangerous place. You need a weapon to protect yourself.
     1. For the *Create* event, drag a ![Start moving in a direction](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.38.32_AM-20120624-093845.png) Move Fixed action and give it a "up" direction and "10" speed.
     ![](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.50.35_AM-20120624-095045.png)
 
-    2. For the *Outside Room* event, drag a ![Destroy Instance](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.51.07_AM-20120624-095124.png) Destroy Instance action and give it a "up" direction and "10" speed.
+    2. For the *Outside Room* event, drag a ![Destroy Instance](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.51.07_AM-20120624-095124.png) Destroy Instance action and make sure "self" is selected.
     ![](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.53.11_AM-20120624-095326.png)
 
   6. Click *OK* to save your goodMissle object.
@@ -118,3 +118,29 @@ We all know space is a dangerous place full of aliens. Let's add some to your pr
 
   8. From the list on the left, double-click on the "space" room. Make sure that you see the "baddie1" object in the list at the bottom left. Click your a few times in the room to place some baddies.
   ![](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_10.54.34_AM-20120624-105452.png)
+
+  9. Save your file and click on the ![Run button](http://share.cameronmcefee.com/screencap/run-20120624-092510.png) Run button. Now you can shoot at the aliens.
+
+  ### Explosive Results
+
+  Right now, shooting aliens does nothing. Let's make the aliens explode when we shoot them.
+
+  1. Create a new sprite by clicking on the ![New Sprite](http://share.cameronmcefee.com/screencap/sprite-20120624-093045.png) New Sprite button.
+
+  2. In the window that pops up, name the sprite "baddieExplosion". Click on *Edit Sprite*. In the window that opens up, click on the ![Add Sprite From File](http://share.cameronmcefee.com/screencap/add-from-file-20120624-101159.png) Add Sprite From File button. From the sprites folder, open *baddieDie-1.png*, *baddieDie-2.png*, *baddieDie-3.png*, *baddieDie-4.png*, and *baddieDie-5.png*. ![](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_11.31.41_AM-20120624-113155.png)
+
+  3. Click the green checkmark, and then click *OK* to save your new explosion sprite.
+
+  4. Create a new object by clicking on the ![New Object](http://share.cameronmcefee.com/screencap/object-20120624-093430.png) New Object button.
+
+  5. In the window that pops up, call the new object "baddieExplosion" and select the "baddieExplosion" sprite from the dropdown list. Add an "Other > Animation End" event.
+
+  6. For the *Animation End* event, drag a ![Destroy Instance](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.51.07_AM-20120624-095124.png) Destroy Instance action and make sure self is selected.
+
+  7. From the list on the left, double-click on the "baddie1" object. Add a *collision* event with "goodMissile" and drag a ![Create Instance](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.56.31_AM-20120624-095649.png) Create Instance action to the event.
+
+  8. In the window that pops up, set the object to your *baddieExplosion* object, and the x and y to *-20*. Click *OK*. Drag a ![Destroy Instance](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.51.07_AM-20120624-095124.png) Destroy Instance action and make sure self is selected.
+
+  7. From the list on the left, double-click on the "goodMissile" object. Add a *collision* event with "baddie1" and drag a ![Destroy Instance](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.51.07_AM-20120624-095124.png) Destroy Instance action and make sure self is selected.
+
+  8. Save your file and click on the ![Run button](http://share.cameronmcefee.com/screencap/run-20120624-092510.png) Run button. When you shoot an alien, it explodes!
