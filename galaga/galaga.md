@@ -84,6 +84,7 @@ Space is a dangerous place. You need a weapon to protect yourself.
   7. From the list on the left of the main window, double click on the *ship* object.
 
   8. Add a *Key Press > \<Space\>* event. Drag a ![Create Instance](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.56.31_AM-20120624-095649.png) Create Instance action to the event. Set the *object* to your goodMissile object and be sure to check the *Relative* box.
+  
   ![](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.57.13_AM-20120624-095727.png)
 
   9. Click *OK* to save your *ship* object.
