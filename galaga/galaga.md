@@ -35,7 +35,7 @@ The first thing we need to do is create the "room" our game happens in.
 
 Let's add your space ship and get it flying around.
 
-  1. Create a new background by clicking on the ![New Sprite](http://share.cameronmcefee.com/screencap/sprite-20120624-093045.png) New Sprite button.
+  1. Create a new sprite by clicking on the ![New Sprite](http://share.cameronmcefee.com/screencap/sprite-20120624-093045.png) New Sprite button.
 
   2. In the window that pops up, name the sprite "ship". Click on *Load Sprite* and open the file `demo-files/sprites/ship.png`. Make sure *Transparent* is checked. Click *OK*.
 
@@ -45,16 +45,47 @@ Let's add your space ship and get it flying around.
 
   5. Click on the *Add Event* button and add "Keyboard" events for *\<no key\>*, *\<Left\>*, and *\<Right\>*. Also add an event for *Other > Intersect Boundary*
 
-    1. For the *\<no key\>* event, drag a ![Start moving in a direction](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.38.32_AM-20120624-093845.png) Move Fixed event and give it a "stop" direction and "0" speed.
+    1. For the *\<no key\>* event, drag a ![Start moving in a direction](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.38.32_AM-20120624-093845.png) Move action event and give it a "stop" direction and "0" speed.
     ![](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.40.41_AM-20120624-094051.png)
 
-    2. For the *\<Left\>* event, drag a ![Start moving in a direction](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.38.32_AM-20120624-093845.png) Move Fixed event and give it a "left" direction and "10" speed.
+    2. For the *\<Left\>* event, drag a ![Start moving in a direction](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.38.32_AM-20120624-093845.png) Move Fixed action and give it a "left" direction and "10" speed.
     ![](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.42.47_AM-20120624-094301.png)
 
-    3. For the *\<Right\>* event, drag a ![Start moving in a direction](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.38.32_AM-20120624-093845.png) Move Fixed event and give it a "right" direction and "10" speed.
+    3. For the *\<Right\>* event, drag a ![Start moving in a direction](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.38.32_AM-20120624-093845.png) Move Fixed action and give it a "right" direction and "10" speed.
     ![](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.43.35_AM-20120624-094348.png)
 
-    4. For the *Intersect Boundary* event, drag a ![Start moving in a direction](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.38.32_AM-20120624-093845.png) Move Fixed event and give it a "right" direction and "10" speed.
+    4. For the *Intersect Boundary* event, drag a ![Start moving in a direction](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.38.32_AM-20120624-093845.png) Move Fixed action and give it a "right" direction and "10" speed.
     ![](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.40.41_AM-20120624-094051.png)
 
   6. Save your file and click on the ![Run button](http://share.cameronmcefee.com/screencap/run-20120624-092510.png) Run button. Click on the window and press the left and right keys. Your ship will fly around space!
+
+### Shoot Missiles!
+
+Space is a dangerous place. You need a weapon to protect yourself.
+
+  1. Create a new sprite by clicking on the ![New Sprite](http://share.cameronmcefee.com/screencap/sprite-20120624-093045.png) New Sprite button.
+
+  2. In the window that pops up, name the sprite "goodMissile". Click on *Load Sprite* and open the file `demo-files/sprites/goodMissile.png`. Make sure *Transparent* is checked. Click *OK*.
+
+  3. Create a new object by clicking on the ![New Object](http://share.cameronmcefee.com/screencap/object-20120624-093430.png) New Object button.
+
+  4. In the window that pops up, call the new object "goodMissile" and select the "goodMissile" sprite from the dropdown list.
+
+  5. Click on the *Add Event* button and add a "Create" event and a *Other > Outside Room* event.
+
+    1. For the *Create* event, drag a ![Start moving in a direction](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.38.32_AM-20120624-093845.png) Move Fixed action and give it a "up" direction and "10" speed.
+    ![](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.50.35_AM-20120624-095045.png)
+
+    2. For the *Outside Room* event, drag a ![Destroy Instance](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.51.07_AM-20120624-095124.png) Destroy Instance action and give it a "up" direction and "10" speed.
+    ![](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.53.11_AM-20120624-095326.png)
+
+  6. Click *OK* to save your goodMissle object.
+
+  7. From the list on the left of the main window, double click on the *ship* object.
+
+  8. Add a *Key Press > \<Space\>* event. Drag a ![Create Instance](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.56.31_AM-20120624-095649.png) Create Instance action to the event. Set the *object* to your goodMissile object and be sure to check the *Relative* box.
+  ![](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.57.13_AM-20120624-095727.png)
+
+  9. Click *OK* to save your *ship* object.
+
+  10. Save your file and click on the ![Run button](http://share.cameronmcefee.com/screencap/run-20120624-092510.png) Run button. Press the space bar key. Your ship will shoot missles. Hooray, we're not defenseless!
