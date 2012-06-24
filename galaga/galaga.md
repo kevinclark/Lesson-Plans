@@ -1,5 +1,7 @@
 # Galaga
 
+![](http://upload.wikimedia.org/wikipedia/en/thumb/2/2a/Galaga.png/220px-Galaga.png)
+
 [Galaga](http://en.wikipedia.org/wiki/Galaga) is a classic arcade game that first appeared in 1979, as a sequal to Galaxian. The goal of the game is to pilot your space ship, shooting down flying aliens, while avoiding their missiles. Desispite being relased 33 years ago, Galaga and similar spinoffs are still popular, appearing on smartphones and Xbox Live Arcade.
 
 This tutorial teaches you how to build a simplified version of Galaga. You'll need a copy of the lite version of GameMaker.
@@ -27,9 +29,12 @@ The first thing we need to do is create the "room" our game happens in.
   4. In the window that pops up, name the room "space" and select your new "space" background from the dropdown list. Also, set the *Vert. Speed* to `2`.
   ![](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.21.31_AM-20120624-092217.png)
 
-  5. Click the green checkmark in the top left corner of the window to save the settings.
+  5. Set the Snap X and Snap Y properties to 32. In the settings tab, set the height and width of the room to 640.
+  ![](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_10.55.50_AM-20120624-105714.png)
 
-  6. Save your file and click on the ![Run button](http://share.cameronmcefee.com/screencap/run-20120624-092510.png) Run button. You should see space flying past.
+  6. Click the green checkmark in the top left corner of the window to save the settings.
+
+  7. Save your file and click on the ![Run button](http://share.cameronmcefee.com/screencap/run-20120624-092510.png) Run button. You should see space flying past.
 
 ### Add your space ship
 
@@ -57,7 +62,10 @@ Let's add your space ship and get it flying around.
     4. For the *Intersect Boundary* event, drag a ![Start moving in a direction](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.38.32_AM-20120624-093845.png) Move Fixed action and give it a "right" direction and "10" speed.
     ![](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.40.41_AM-20120624-094051.png)
 
-  6. Save your file and click on the ![Run button](http://share.cameronmcefee.com/screencap/run-20120624-092510.png) Run button. Click on the window and press the left and right keys. Your ship will fly around space!
+  6. From the list on the left, double-click on the "space" room. Make sure that you see the "ship" object in the list at the bottom left. Click your mouse once in the room to place a ship.
+  ![](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_10.19.23_AM-20120624-101936.png)
+
+  7. Save your file and click on the ![Run button](http://share.cameronmcefee.com/screencap/run-20120624-092510.png) Run button. Click on the window and press the left and right keys. Your ship will fly around space!
 
 ### Shoot Missiles!
 
@@ -84,9 +92,29 @@ Space is a dangerous place. You need a weapon to protect yourself.
   7. From the list on the left of the main window, double click on the *ship* object.
 
   8. Add a *Key Press > \<Space\>* event. Drag a ![Create Instance](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.56.31_AM-20120624-095649.png) Create Instance action to the event. Set the *object* to your goodMissile object and be sure to check the *Relative* box.
-  
   ![](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.57.13_AM-20120624-095727.png)
 
   9. Click *OK* to save your *ship* object.
 
-  10. Save your file and click on the ![Run button](http://share.cameronmcefee.com/screencap/run-20120624-092510.png) Run button. Press the space bar key. Your ship will shoot missles. Hooray, we're not defenseless!
+  10. Save your file and click on the ![Run button](http://share.cameronmcefee.com/screencap/run-20120624-092510.png) Run button. Press the space bar key. Your ship will shoot missiles. Hooray, we're not defenseless!
+
+### The Bad Guys
+
+We all know space is a dangerous place full of aliens. Let's add some to your project.
+
+  1. Create a new sprite by clicking on the ![New Sprite](http://share.cameronmcefee.com/screencap/sprite-20120624-093045.png) New Sprite button.
+
+  2. In the window that pops up, name the sprite "baddie1". Click on *Edit Sprite*. In the window that opens up, click on the ![Add Sprite From File](http://share.cameronmcefee.com/screencap/add-from-file-20120624-101159.png) Add Sprite From File button. From the sprites folder, open *baddie1-A.png* and *baddie1-B.png*. ![](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_10.13.25_AM-20120624-101333.png)
+
+  3. Click the green checkmark, and then click *OK* to save your new baddie sprite.
+
+  4. Create a new object by clicking on the ![New Object](http://share.cameronmcefee.com/screencap/object-20120624-093430.png) New Object button.
+
+  5. In the window that pops up, call the new object "baddie1" and select the "baddie1" sprite from the dropdown list.
+
+  6. Add a Create event to the baddie1 object and drag a ![Execute Code](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_10.16.06_AM-20120624-101621.png) Execute Code action onto it.
+
+  7. In the window that pops up, add the following code: `image_speed = .05`. This will make sure the baddie doesn't animate too fast. Click the green checkmark and then click *OK* to save your baddie.
+
+  8. From the list on the left, double-click on the "space" room. Make sure that you see the "baddie1" object in the list at the bottom left. Click your a few times in the room to place some baddies.
+  ![](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_10.54.34_AM-20120624-105452.png)
