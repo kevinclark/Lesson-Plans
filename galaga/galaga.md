@@ -138,7 +138,7 @@ Right now, shooting aliens does nothing. Let's make the aliens explode when we s
 
   1. Create a new sprite by clicking on the ![New Sprite](http://share.cameronmcefee.com/screencap/sprite-20120624-093045.png) New Sprite button.
 
-  2. In the window that pops up, name the sprite "baddieExplosion". Click on *Edit Sprite*. In the window that opens up, click on the ![Add Sprite From File](http://share.cameronmcefee.com/screencap/add-from-file-20120624-101159.png) Add Sprite From File button. From the sprites folder, open *baddieDie-1.png*, *baddieDie-2.png*, *baddieDie-3.png*, *baddieDie-4.png*, and *baddieDie-5.png*. ![](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_11.31.41_AM-20120624-113155.png)
+  2. In the window that pops up, name the sprite `baddieExplosion`. In the window that opens up, select *Image 0* in the list and click the ![Cut to clipboard](http://share.cameronmcefee.com/screencap/cut-20120626-113840.png) Cut To Clipboard Button to delete it. Click on *Edit Sprite*. In the window that opens up, click on the ![Add Sprite From File](http://share.cameronmcefee.com/screencap/add-from-file-20120624-101159.png) Add Sprite From File button. From the sprites folder, open *baddieDie-1.png*, *baddieDie-2.png*, *baddieDie-3.png*, *baddieDie-4.png*, and *baddieDie-5.png*. ![](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_11.31.41_AM-20120624-113155.png)
 
   3. Click the green checkmark, and then click *OK* to save your new explosion sprite.
 
