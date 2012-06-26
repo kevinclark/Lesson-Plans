@@ -22,15 +22,15 @@ The first thing we need to do is create the "room" our game happens in.
 
   1. Create a new background by clicking on the ![New Background](http://share.cameronmcefee.com/screencap/background-20120624-091130.png) New Background button.
 
-  2. In the window that pops up, call the background "space" and click on the *Load Background* button and open the `demo-files/backgrounds/space.png` file. Click *OK*.
+  2. In the window that pops up, call the background `space` and click on the *Load Background* button and open the `demo-files/backgrounds/space.png` file. Click *OK*.
 
   3. Create a new room by clicking on the ![New Room](http://share.cameronmcefee.com/screencap/room-20120624-092036.png) New Room button.
 
-  4. In the window that pops up, name the room "space" and select your new "space" background from the dropdown list. Also, set the *Vert. Speed* to `2`.
-  ![](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.21.31_AM-20120624-092217.png)
-
-  5. Set the Snap X and Snap Y properties to 32. In the settings tab, set the height and width of the room to 640.
+  4. In the window that pops up, click on the settings tab. Name the room `space` and set the height and width of the room to `640`. At the top of the window, set the Snap X and Snap Y properties to `32`.
   ![](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_10.55.50_AM-20120624-105714.png)
+
+  5. In the window that pops up, click on the settings name the room "space" and select your new "space" background from the dropdown list. Also, set the *Vert. Speed* to `2`.
+  ![](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.21.31_AM-20120624-092217.png)
 
   6. Click the green checkmark in the top left corner of the window to save the settings.
 
