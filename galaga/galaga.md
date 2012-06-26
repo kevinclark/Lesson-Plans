@@ -26,10 +26,10 @@ The first thing we need to do is create the "room" our game happens in.
 
   3. Create a new room by clicking on the ![New Room](http://share.cameronmcefee.com/screencap/room-20120624-092036.png) New Room button.
 
-  4. In the window that pops up, click on the settings tab. Name the room `space` and set the height and width of the room to `640`. At the top of the window, set the Snap X and Snap Y properties to `32`.
+  4. In the window that pops up, click on the settings tab. Name the room `space` and set the height and width of the room to `640`. At the top of the window, set the Snap X and Snap Y properties to `32`.  
   ![](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_10.55.50_AM-20120624-105714.png)
 
-  5. In the window that pops up, click on the settings name the room "space" and select your new "space" background from the dropdown list. Also, set the *Vert. Speed* to `2`.
+  5. In the window that pops up, click on the settings name the room "space" and select your new "space" background from the dropdown list. Also, set the *Vert. Speed* to `2`.  
   ![](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.21.31_AM-20120624-092217.png)
 
   6. Click the green checkmark in the top left corner of the window to save the settings.
