@@ -63,13 +63,17 @@ Let's add your space ship and get it flying around.
     3. For the *\<Right\>* event, drag a ![Start moving in a direction](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.38.32_AM-20120624-093845.png) Move Fixed action and give it a `→` direction and `10` speed.
     ![](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.43.35_AM-20120624-094348.png)
 
-    4. For the *Intersect Boundary* event, drag a ![Start moving in a direction](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.38.32_AM-20120624-093845.png) Move Fixed action and give it a `■` direction and "10" speed.
+    4. For the *Intersect Boundary* event, drag a ![Start moving in a direction](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.38.32_AM-20120624-093845.png) Move Fixed action and give it a `■` direction and `0` speed.
     ![](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.40.41_AM-20120624-094051.png)
 
-  6. From the list on the left, double-click on the "space" room. Make sure that you see the "ship" object in the list at the bottom left. Click your mouse once in the room to place a ship.
+  6. Click *OK*.
+
+  7. From the list on the left, double-click on the *space* room. Make sure that you see the *ship* object in the list at the bottom left. Click your mouse once in the room to place a ship.  
   ![](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_10.19.23_AM-20120624-101936.png)
 
-  7. Save your file and click on the ![Run button](http://share.cameronmcefee.com/screencap/run-20120624-092510.png) Run button. Click on the window and press the left and right keys. Your ship will fly around space!
+  8. Click the green checkmark at the top right corner of the window to save your room.
+
+  9. Save your file and click on the ![Run button](http://share.cameronmcefee.com/screencap/run-20120624-092510.png) Run button. Click on the window and press the left and right keys. Your ship will fly around space!
 
 ### Shoot Missiles!
 
