@@ -166,12 +166,19 @@ Now that we can defend ourselves in space, let's keep track of our score.
 
   2. In the window that pops up, call the new object `score`. Add a *Create* and a "Draw" event.
 
-    1. To the Create event, add a ![Set Score](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-26_at_10.20.00_AM-20120626-102332.png) Set Score action and set it to `0`.
+    1. In the Create event, add a ![Set Score](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-26_at_10.20.00_AM-20120626-102332.png) Set Score action and set it to `0`.
 
-    2. To the Create event drag a ![Execute Code](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_10.16.06_AM-20120624-101621.png) Execute Code action onto it. In the text box add the text `draw_set_color(c_white)`.
+    2. In the Create event also drag a ![Execute Code](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_10.16.06_AM-20120624-101621.png) Execute Code action onto it. In the text box add the text `draw_set_color(c_white)`. Click the green checkmark. to save the code.
 
-    3. To the Draw event drag a ![Draw Score](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-26_at_10.26.18_AM-20120626-102629.png) Draw Score action. Set the x and y values to `32` and the caption value to `Score: `
+    3. In the Draw event drag a ![Draw Score](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-26_at_10.26.18_AM-20120626-102629.png) Draw Score action. Set the x and y values to `32` and the caption value to `Score: `
 
-  3. From the list on the left, double-click on the *space* room. Make sure that you see the *score* object in the list at the bottom left. Click once in the room to place the score object. ![](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-26_at_10.27.56_AM-20120626-102827.png)
+  3. Click *OK* to save your score object.
 
-  4. Save your file and click on the ![Run button](http://share.cameronmcefee.com/screencap/run-20120624-092510.png) Run button. Now when you shoot an alien, you'll see that you get a point.
+  4. From the list on the left, double-click on the *space* room. Make sure that you see the *score* object in the list at the bottom left. Click once in the room to place the score object.  
+  ![](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-26_at_10.27.56_AM-20120626-102827.png)
+
+  5. From the list on the left, double-click on the *baddie1* object. Click on the collision event with *goodMissile* and drag a ![Set Score](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-26_at_10.20.00_AM-20120626-102332.png) Set Score action and set it to `+1`. Be sure to also add a check next to *relative*. Click *OK*.
+
+  6. Click the green checkmark at the top right corner of the window to save your room.
+
+  7. Save your file and click on the ![Run button](http://share.cameronmcefee.com/screencap/run-20120624-092510.png) Run button. Now when you shoot an alien, you'll see that you get a point.
