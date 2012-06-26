@@ -81,25 +81,25 @@ Space is a dangerous place. You need a weapon to protect yourself.
 
   1. Create a new sprite by clicking on the ![New Sprite](http://share.cameronmcefee.com/screencap/sprite-20120624-093045.png) New Sprite button.
 
-  2. In the window that pops up, name the sprite "goodMissile". Click on *Load Sprite* and open the file `demo-files/sprites/goodMissile.png`. Make sure *Transparent* is checked. Click *OK*.
+  2. In the window that pops up, name the sprite `goodMissile`. Click on *Load Sprite* and open the file `demo-files/sprites/goodMissile.png`. Make sure *Transparent* is checked. Click *OK*.
 
   3. Create a new object by clicking on the ![New Object](http://share.cameronmcefee.com/screencap/object-20120624-093430.png) New Object button.
 
-  4. In the window that pops up, call the new object "goodMissile" and select the "goodMissile" sprite from the dropdown list.
+  4. In the window that pops up, call the new object `goodMissile` and select the *goodMissile* sprite from the dropdown list.
 
   5. Click on the *Add Event* button and add a "Create" event and a *Other > Outside Room* event.
 
-    1. For the *Create* event, drag a ![Start moving in a direction](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.38.32_AM-20120624-093845.png) Move Fixed action and give it a "up" direction and "10" speed.
+    1. For the *Create* event, drag a ![Start moving in a direction](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.38.32_AM-20120624-093845.png) Move Fixed action and give it a `↑` direction and `10` speed.
     ![](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.50.35_AM-20120624-095045.png)
 
-    2. For the *Outside Room* event, drag a ![Destroy Instance](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.51.07_AM-20120624-095124.png) Destroy Instance action and make sure "self" is selected.
+    2. For the *Outside Room* event, drag a ![Destroy Instance](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.51.07_AM-20120624-095124.png) Destroy Instance action and make sure `self` is selected.
     ![](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.53.11_AM-20120624-095326.png)
 
   6. Click *OK* to save your goodMissle object.
 
   7. From the list on the left of the main window, double click on the *ship* object.
 
-  8. Add a *Key Press > \<Space\>* event. Drag a ![Create Instance](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.56.31_AM-20120624-095649.png) Create Instance action to the event. Set the *object* to your goodMissile object and be sure to check the *Relative* box.
+  8. Add a *Key Press > \<Space\>* event. Drag a ![Create Instance](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.56.31_AM-20120624-095649.png) Create Instance action to the event. Set the *object* to your goodMissile object and be sure to check the *Relative* box.  
   ![](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.57.13_AM-20120624-095727.png)
 
   9. Click *OK* to save your *ship* object.
@@ -112,7 +112,7 @@ We all know space is a dangerous place full of aliens. Let's add some to your pr
 
   1. Create a new sprite by clicking on the ![New Sprite](http://share.cameronmcefee.com/screencap/sprite-20120624-093045.png) New Sprite button.
 
-  2. In the window that pops up, name the sprite "baddie1". Click on *Edit Sprite*. In the window that opens up, click on the ![Add Sprite From File](http://share.cameronmcefee.com/screencap/add-from-file-20120624-101159.png) Add Sprite From File button. From the sprites folder, open *baddie1-A.png* and *baddie1-B.png*. ![](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_10.13.25_AM-20120624-101333.png)
+  2. In the window that pops up, name the sprite `baddie1`. Click on *Edit Sprite*. In the window that opens up, select *Image 0* in the list and click the ![Cut to clipboard](http://share.cameronmcefee.com/screencap/cut-20120626-113840.png) Cut To Clipboard Button to delete it. Click on the ![Add Sprite From File](http://share.cameronmcefee.com/screencap/add-from-file-20120624-101159.png) Add Sprite From File button. From the sprites folder, open *baddie1-A.png* and *baddie1-B.png*. ![](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_10.13.25_AM-20120624-101333.png)
 
   3. Click the green checkmark, and then click *OK* to save your new baddie sprite.
 
