@@ -121,9 +121,9 @@ We all know space is a dangerous place full of aliens. Let's add some to your pr
 
   9. Save your file and click on the ![Run button](http://share.cameronmcefee.com/screencap/run-20120624-092510.png) Run button. Now you can shoot at the aliens.
 
-  ### Explosive Results
+### Explosive Results
 
-  Right now, shooting aliens does nothing. Let's make the aliens explode when we shoot them.
+Right now, shooting aliens does nothing. Let's make the aliens explode when we shoot them.
 
   1. Create a new sprite by clicking on the ![New Sprite](http://share.cameronmcefee.com/screencap/sprite-20120624-093045.png) New Sprite button.
 
@@ -144,3 +144,21 @@ We all know space is a dangerous place full of aliens. Let's add some to your pr
   7. From the list on the left, double-click on the "goodMissile" object. Add a *collision* event with "baddie1" and drag a ![Destroy Instance](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_9.51.07_AM-20120624-095124.png) Destroy Instance action and make sure self is selected.
 
   8. Save your file and click on the ![Run button](http://share.cameronmcefee.com/screencap/run-20120624-092510.png) Run button. When you shoot an alien, it explodes!
+
+### Settle the Score
+
+Now that we can defend ourselves in space, let's keep track of our score.
+
+  1. Create a new object by clicking on the ![New Object](http://share.cameronmcefee.com/screencap/object-20120624-093430.png) New Object button.
+
+  2. In the window that pops up, call the new object "score". Add a "Create" and a "Draw" event.
+
+    1. To the Create event, add a ![Set Score](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-26_at_10.20.00_AM-20120626-102332.png) Set Score action and set it to 0
+
+    2. To the Create event drag a ![Execute Code](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_10.16.06_AM-20120624-101621.png) Execute Code action onto it. In the text box add the text `draw_set_color(c_white)`.
+
+    3. To the Draw event drag a ![Draw Score](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-26_at_10.26.18_AM-20120626-102629.png) Draw Score action. Set the x and y values to `32` and the caption value to `Score: `
+
+  3. From the list on the left, double-click on the "space" room. Make sure that you see the "score" object in the list at the bottom left. Click once in the room to place the score object. ![](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-26_at_10.27.56_AM-20120626-102827.png)
+
+  4. Save your file and click on the ![Run button](http://share.cameronmcefee.com/screencap/run-20120624-092510.png) Run button. Now when you shoot an alien, you'll see that you get a point.
