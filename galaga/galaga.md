@@ -112,22 +112,25 @@ We all know space is a dangerous place full of aliens. Let's add some to your pr
 
   1. Create a new sprite by clicking on the ![New Sprite](http://share.cameronmcefee.com/screencap/sprite-20120624-093045.png) New Sprite button.
 
-  2. In the window that pops up, name the sprite `baddie1`. Click on *Edit Sprite*. In the window that opens up, select *Image 0* in the list and click the ![Cut to clipboard](http://share.cameronmcefee.com/screencap/cut-20120626-113840.png) Cut To Clipboard Button to delete it. Click on the ![Add Sprite From File](http://share.cameronmcefee.com/screencap/add-from-file-20120624-101159.png) Add Sprite From File button. From the sprites folder, open *baddie1-A.png* and *baddie1-B.png*. ![](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_10.13.25_AM-20120624-101333.png)
+  2. In the window that pops up, name the sprite `baddie1`. Click on *Edit Sprite*. In the window that opens up, select *Image 0* in the list and click the ![Cut to clipboard](http://share.cameronmcefee.com/screencap/cut-20120626-113840.png) Cut To Clipboard Button to delete it. Click on the ![Add Sprite From File](http://share.cameronmcefee.com/screencap/add-from-file-20120624-101159.png) Add Sprite From File button. From the sprites folder, open `baddie1-A.png` and `baddie1-B.png`.  
+  ![](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_10.13.25_AM-20120624-101333.png)
 
   3. Click the green checkmark, and then click *OK* to save your new baddie sprite.
 
   4. Create a new object by clicking on the ![New Object](http://share.cameronmcefee.com/screencap/object-20120624-093430.png) New Object button.
 
-  5. In the window that pops up, call the new object "baddie1" and select the "baddie1" sprite from the dropdown list.
+  5. In the window that pops up, call the new object `baddie1` and select the *baddie1* sprite from the dropdown list.
 
   6. Add a Create event to the baddie1 object and drag a ![Execute Code](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_10.16.06_AM-20120624-101621.png) Execute Code action onto it.
 
   7. In the window that pops up, add the following code: `image_speed = .05`. This will make sure the baddie doesn't animate too fast. Click the green checkmark and then click *OK* to save your baddie.
 
-  8. From the list on the left, double-click on the "space" room. Make sure that you see the "baddie1" object in the list at the bottom left. Click your a few times in the room to place some baddies.
+  8. From the list on the left, double-click on the *space* room. Make sure that you see the *baddie1* object in the list at the bottom left. Click your a few times in the room to place some baddies.
   ![](http://share.cameronmcefee.com/screencap/Screen_Shot_2012-06-24_at_10.54.34_AM-20120624-105452.png)
 
-  9. Save your file and click on the ![Run button](http://share.cameronmcefee.com/screencap/run-20120624-092510.png) Run button. Now you can shoot at the aliens.
+  9. Click the green checkmark at the top right corner of the window to save your room.
+
+  10. Save your file and click on the ![Run button](http://share.cameronmcefee.com/screencap/run-20120624-092510.png) Run button. Now you can shoot at the aliens.
 
 ### Explosive Results
 
