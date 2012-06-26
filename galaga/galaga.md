@@ -10,7 +10,7 @@ This tutorial teaches you how to build a simplified version of Galaga. You'll ne
 
 #### [Download for **Windows**](http://www.yoyogames.com/gamemaker/windows) | [Download for **Mac**](http://www.yoyogames.com/gamemaker/mac)
 
-#### Download the [demo files]()
+#### Download the [demo files](https://github.com/cameronmcefee/Lesson-Plans/blob/master/galaga/demo-files.zip?raw=true)
 
 ---
 
