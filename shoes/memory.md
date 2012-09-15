@@ -74,12 +74,52 @@ spaced, with 50px margins on the top.
 Shoes.app :width => 800, :height => 600 do
   blue = "#0000FF"
 
-  4.times do |column|
-    3.times do |row|
+  3.times do |row|
+    4.times do |column|
       rect 200 * column + 50, 200 * row + 50, 100, 100, :fill => blue
     end
   end
 
 end
 ```
+
+
+# Showing the card value
+
+The goal of the game is going to be to pick two cards that are the same
+color. For now, let's just work on changing the color of a single bocard
+when clicking on it. To change the color of a rectangle, we need to be
+able to access it after it's been drawn. So first, let's store the
+rectangles we're drawing. Change your drawing loop to look like this:
+
+```
+  @cards = []
+
+  3.times do |row|
+    4.times do |column|
+      r = rect 200 * column + 50, 200 * row + 50, 100, 100, :fill => blue
+      @cards << r
+    end
+  end
+```
+
+`@cards = []` means 'set @cards to an empty list`. The square brackets
+are like a bucket, and you can place things in there single file. We're
+now setting 'r = rect ...', which is just our way of giving the
+rectangle we're drawing a name. And finally, '@cards << r' means 'put r
+in the list of @cards, at the back of the line'.
+
+
+Now that we can access the rectangles after they've been drawn, we can
+change their style. Try adding this after the 'end' of the '3.times':
+
+```
+@cards[2].style(:fill => '#FF0000')
+```
+
+If you re-open your shoes program, you'll notice the third card is now
+red. Go ahead and experiment with changing the '2' and the fill color.
+
+
+
 
