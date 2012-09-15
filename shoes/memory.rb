@@ -1,13 +1,15 @@
 Shoes.app :width => 800, :height => 600 do
-  blue = "#0000FF"
+  blue = rgb(100, 100, 100) #"#0000FF"
   green = "#00FF00"
 
   @cards = []
+  @colors = []
 
   3.times do |row|
     4.times do |column|
       r = rect 200 * column + 50, 200 * row + 50, 100, 100, :fill => blue
       @cards << r
+      @colors << rgb(rand * 255, rand * 255, rand * 255)
     end
   end
 
@@ -19,7 +21,8 @@ Shoes.app :width => 800, :height => 600 do
 
     if button == 1
       if (50..150).include?(y % 200) && (50..150).include?(x % 200)
-        @cards[(4 * row) + column].style(:fill => green)
+        idx = (4 * row) + column
+        @cards[idx].style(:fill => @colors[idx])
       end
     else
       @cards.each {|c| c.style(:fill => blue)}
