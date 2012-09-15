@@ -120,6 +120,90 @@ change their style. Try adding this after the 'end' of the '3.times':
 If you re-open your shoes program, you'll notice the third card is now
 red. Go ahead and experiment with changing the '2' and the fill color.
 
+We can change the color of a card, but we don't want to change just
+any card - we want to change the one that we're clicking on. So we're
+going to need information about where the mouse is. We're also going to
+need to respond to changes as they happen, so we'll do all of this as
+part of the 'animation' phase. Go ahead and add this code to the bottom
+of the Shoes.app block:
 
 
+```
+  animate do
+    button, x, y = self.mouse
 
+    if button == 1
+      alert("Mouse is clicked at #{x}, #{y}")
+    end
+  end
+```
+
+If you reopen your app and click around, you'll notice that the first
+number gets bigger as you go to the right and the second gets bigger as
+you go down. That's because x and y in this case are where the mouse is
+on the coordinate system. 'button' is 1 when the mouse button is
+clicked.
+
+So, if our goal is to change the color of a specific card, we need to
+find out which card we're hovering over, and we can do that with our
+coordinates.
+
+Try changing "x" and "y" in the alert to "x / 200" and "y / 200". you
+should notice that when we do this, the numbers line up to how many
+cards over and down we're clicking on. This is because when we divide
+two whole numbers, we're told how many times one goes into the other
+without any remainder. That tells us what space on the grid we're in.
+
+That would be great if our cards filled that whole space (show this on
+the chalk board). But since they only fill 100 of the 200 pixels, we
+need to know where in that range they fit. Our cards have a 50px margin
+on both sides, so they exist between the 50th and the 150th pixel in
+those squares. To find out where the mouse is, we can look at the
+remainder of x / 200. Change the text in the alert to 'x % 200' and 'y % 200' and see what happens.
+
+The '%' symbol is called the 'modulo' operator. It's the way to find out
+what's left over. So 202 / 200 would be 1 (there are one 200s in 202). and 202 % 200 would be 2 (there are 2 left over after we take out the 200).
+
+So, in our case, we want what's left over after taking out the 200s to
+be between 50 and 150. Let's only change the color if we're within those
+bounds:
+
+```
+  animate do
+    button, x, y = self.mouse
+
+    column = x / 200
+    row = y / 200
+
+    if button == 1
+      if (50..150).include?(y % 200) && (50..150).include?(x % 200)
+        @cards[(4 * row) + column].style(:fill => green)
+      end
+    end
+  end
+```
+
+If you play with the app now, you're going to notice that the rectanges
+change, but then never change back. That's because we never tell the
+rectangle to change back after we stop pressing the mouse button.
+
+Probably the easiest way to do this is to say "If I'm not clicking,
+everything should be blue again". So change the animate block to look
+like this:
+
+
+```
+  animate do
+    button, x, y = self.mouse
+
+    column = x / 200
+    row = y / 200
+
+    if button == 1
+      if (50..150).include?(y % 200) && (50..150).include?(x % 200)
+        @cards[(4 * row) + column].style(:fill => green)
+      end
+    else
+      @cards.each {|c| c.style(:fill => blue)}
+    end
+```
