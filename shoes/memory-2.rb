@@ -11,7 +11,7 @@ Shoes.app :width => 800, :height => 600 do
     end
   end
 
-  animate do 
+  animate do
     button, x, y = self.mouse
     column = x / 200
     row = y / 200
@@ -22,7 +22,7 @@ Shoes.app :width => 800, :height => 600 do
         if (50..150).include?(over_y)
           space = (4 * row) + column
           color = rgb(rand(255), rand(255), rand(255))
-          @cards[space].style(:fill => @color[space])
+          @cards[space].style(:fill => color)
         end
       end
     else
