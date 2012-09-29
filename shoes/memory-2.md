@@ -1,4 +1,45 @@
 
+Today we're going to finish building a memory game we started last time.
+We're going to do this using Shoes, which uses the Ruby programming language.
+
+The game has a set of 'cards' on a board. When you click the
+cards, the color will change to a 'hidden' color. Your goal will to be
+to find all the pairs of two cards with the same color.
+
+We got as far as drawing cards and seeing the hidden color last time.
+If you don't have that available, or weren't here last time, you can
+download a copy [here](https://github.com/kevinclark/Lesson-Plans/blob/master/shoes/memory-2.rb).
+
+
+
+### Prereqs - Installing Shoes and a text editor
+
+
+#### Windows
+
+On windows, download and unzip **Shoes 3 +video for Windows**
+* [http://github.com/downloads/shoes/shoes/shoes3.exe.zip](http://github.com/downloads/shoes/shoes/shoes3.exe.zip)
+
+Download and install **Notepad++**
+* [http://download.tuxfamily.org/notepadplus/6.1.3/npp.6.1.3.Installer.exe](http://download.tuxfamily.org/notepadplus/6.1.3/npp.6.1.3.Installer.exe)
+
+#### Mac OSX
+
+On Mac OSX 10.6 (Snow Leopard) and 10.7 (Lion), download **Shoes 3**.
+Open the dmg file, and copy the Shoes app to your computer.
+* https://github.com/downloads/shoes/shoes/shoes-3.1.0.dmg
+
+Download and open **Text Wrangler**
+* http://ash.barebones.com/TextWrangler_4.0.1.dmg
+
+
+# Try out what's there
+
+Run the Shoes program that you downloaded earlier. You should see "Welcome to
+Shoes". Click on "Open an App." Now find the ruby file that you saved earlier and
+open it. You should see 12 cards show up. Click them and see that they
+flip.
+
 # Generating colors
 
 Now that we can show what color a card is underneath, the game would be
@@ -91,3 +132,5 @@ animate to look like this:
     end
   end
 ```
+
+
