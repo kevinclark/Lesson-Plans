@@ -49,8 +49,10 @@ Shoes.app :width => 800, :height => 600 do
       end
     else
       @cards.each_with_index {|card, space| 
-        if !@picked.include?(space) && !@done.include?(space)
-          card.style(:fill => blue)
+        if !@picked.include?(space)
+          if !@done.include?(space)
+            card.style(:fill => blue)
+          end
         end
       }
     end
