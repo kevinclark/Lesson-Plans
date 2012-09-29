@@ -1,6 +1,5 @@
 Shoes.app :width => 800, :height => 600 do
   blue = rgb(100, 20, 45)
-  green = "#00FF00"
 
   @cards = []
 
@@ -22,8 +21,7 @@ Shoes.app :width => 800, :height => 600 do
       if (50..150).include?(over_x)
         if (50..150).include?(over_y)
           space = (4 * row) + column
-          color = rgb(rand() * 255, rand() * 255,
-                     rand * 255)
+          color = rgb(rand(255), rand(255), rand(255))
           @cards[space].style(:fill => color)
         end
       end
