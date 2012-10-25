@@ -15,6 +15,7 @@ Shoes.app :width => 900, :height => 625 do
   grey = rgb(166, 154, 159)
   @board = []
   @columns = [[],[],[],[],[],[],[]]
+  @picked = []
 
   6.times do |row|
     7.times do |column|
@@ -48,11 +49,16 @@ Shoes.app :width => 900, :height => 625 do
           #based on current "column" from the mouse
           space = (@columns[column].last*7)+column
           @board[@columns[column].last*7+column].style(:fill => color)
+          @picked << space
           @columns[column].pop
         end
       end
     else
-      @board.each {|c| c.style(:fill => blue)}
+      @board.each_with_index do |card, space|
+        if !@picked.include?(space)
+          card.style(:fill => blue)
+        end
+      end
     end
   end
 
