@@ -48,7 +48,7 @@ Shoes.app :width => 900, :height => 625 do
           #We then have to offset where that bottom position is 
           #based on current "column" from the mouse
           space = (@columns[column].last*7)+column
-          @board[@columns[column].last*7+column].style(:fill => color)
+          @board[space].style(:fill => color)
           @picked << space
           @columns[column].pop
         end
