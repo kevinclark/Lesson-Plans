@@ -16,9 +16,6 @@ constructed, and work towards placing pieces at a given location. There's room a
 end to go past that, but that's our goal.
 
 
-Get started by download or copying the intro Shoes app [here](https://github.com/brntbeer/Lesson-Plans/tree/connect-four/shoes/connect-four-intro.rb).
-
-
 ### Prereqs - Installing Shoes and a text editor
 
 On windows, download and unzip **Shoes 3 +video for Windows**
@@ -35,6 +32,10 @@ Open the dmg file, and copy the Shoes app to your computer.
 
 Download and open **Text Wrangler**
 * http://ash.barebones.com/TextWrangler_4.0.1.dmg
+
+## Get started with an intro app
+Get started by download or copying the intro Shoes app [here](https://github.com/brntbeer/Lesson-Plans/tree/connect-four/shoes/connect-four-intro.rb).
+
 
 
 
