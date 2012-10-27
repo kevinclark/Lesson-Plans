@@ -1,5 +1,5 @@
 Shoes.app :width => 900, :height => 625 do
-  grey = rgb(166,154,159)
+  blue = "#0000FF"
   red = rgb(255,0,0)
   black = rgb(0,0,0)
 
@@ -12,7 +12,7 @@ Shoes.app :width => 900, :height => 625 do
   6.times do |row|
     7.times do |column|
       r = rect 100 * column+5,
-               100 * row+5, 100, 100, :fill => grey
+               100 * row+5, 100, 100, :fill => blue
       @board << r
       @columns[column] << row
     end
@@ -33,13 +33,6 @@ Shoes.app :width => 900, :height => 625 do
           @board[space].style(:fill => color)
           @picked << space
           @columns[column].pop
-        end
-      end
-    else
-      #Only redrawn non-picked items.
-      @board.each_with_index do |card, space|
-        if !@picked.include?(space)
-          card.style(:fill => blue)
         end
       end
     end
