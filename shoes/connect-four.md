@@ -58,8 +58,8 @@ end
 
 Play around with the row and column section, we've seen this in the memory game before,
 but to give an overview, if we just had the `4.times do |column|` section, we would just
-draw a single square 4 times and place them next to each other. We need a way of moving
-this to a new row and essentially filling out our grid.
+draw a single square 4 times and place them next to each other. We need a way of repeating
+this a number of times to make rows.
 
 ```ruby
 Shoes.app :width => 900, :height => 625 do
