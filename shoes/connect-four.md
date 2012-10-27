@@ -118,11 +118,11 @@ weeks ago:
 
 Try changing "x" and "y" in the alert to "x / 100" and "y / 100". you
 should notice that when we do this, the numbers line up to how many
-cards over and down we're clicking on. This is because when we divide
+squares over and down we're clicking on. This is because when we divide
 two whole numbers, we're told how many times one goes into the other
 without any remainder. That tells us what space on the grid we're in.
 
-[Ed note: We're going to need to explain how we pick the right card. Do
+[Ed note: We're going to need to explain how we pick the right square. Do
 this on the board with pictures]
 
 Since our squares fill 100 pixels each, we
