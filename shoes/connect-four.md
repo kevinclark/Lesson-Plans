@@ -320,8 +320,14 @@ change turn, change color, or fill in a board space if an item has already been 
 ```
 
 
+# Next
+For the next lesson, we'll focus on the following items.
+
 * Pick square at bottom of clicked column
-> because of our column set of arrays,we know we can take the last element there and multiply
->   it by the total number of rows to get it to the botom position. We then have to offset where that bottom position is
->   based on current "column" from the mouse
-> MATH
+ because of our column set of arrays,we know we can take the last element there and multiply
+ it by the total number of rows to get it to the botom position. We then have to offset where that bottom position is
+ based on current "column" from the mouse
+
+* Keeping track/updating whos turn it is in text on a side panel
+* Reseting the game
+* Computing if someone has won or not
