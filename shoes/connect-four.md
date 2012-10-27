@@ -52,7 +52,7 @@ end
 
 # Experiment with table size (building the grid)
 
-When we open `connect-four-intro`, we see a simple app. If we run this we generate a few
+Using the code above, we see a simple app. If we run this we generate a few
 squares on to the screen and thats all. We're first going to play around with the rows
 and columns to generate them to get them how we want them.
 
