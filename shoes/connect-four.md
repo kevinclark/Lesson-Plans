@@ -33,10 +33,21 @@ Open the dmg file, and copy the Shoes app to your computer.
 Download and open **Text Wrangler**
 * http://ash.barebones.com/TextWrangler_4.0.1.dmg
 
+*NOTE* Windows users cannot do alert inside of an animate block. change `animate do`
+to `click do` or `if button == 1` calls to a `click do` call
+
 ## Get started with an intro app
-Get started by download or copying the intro Shoes app [here](https://github.com/brntbeer/Lesson-Plans/tree/connect-four/shoes/connect-four-intro.rb).
+```ruby
+Shoes.app :width => 900, :height => 625 do
+  blue = "#0000FF"
 
+  #Build the grid
+  4.times do |column|
+    rect 200 * column+5,5, 100, 100, :fill => blue
+  end
 
+end
+```
 
 
 # Experiment with table size (building the grid)
@@ -104,6 +115,8 @@ into the columns.
 how self.mouse returns 3 things: button, x, and y. and button being set to 1 means that
 it was pressed.]
 
+[Ed Note: be careful of `if button == 1` on windows]
+
 ```ruby
   animate do
     button, x, y = self.mouse
@@ -121,25 +134,10 @@ Try changing "x" and "y" in the alert to "x / 100" and "y / 100". you
 should notice that when we do this, the numbers line up to how many
 squares over and down we're clicking on. This is because when we divide
 two whole numbers, we're told how many times one goes into the other
-without any remainder. That tells us what space on the grid we're in.
+without any remainder (integer division). That tells us what space on the grid we're in.
 
 [Ed note: We're going to need to explain how we pick the right square. Do
 this on the board with pictures]
-
-Since our squares fill 100 pixels each, we
-need to know where in that 100 pixel range we have clicked. Our cards have a 5px margin
-on both sides, so they exist between the 5th and the 105th pixel in
-each column. To find out where the mouse is, we can look at the
-remainder of x / 100. Change the text in the alert to `x % 100` and `y % 100`
-and see how clicking in the same parts of different squares can yield the same number.
-
-The '%' symbol is called the 'modulus' operator. It's the way to find out
-what's left over. So 102 / 100 would be 1 (there is one full 100 in 102),
-and 102 % 100 would be 2 (there are 2 left over after we take out the 100).
-
-So, in our case, we want what's left over after taking out the 100s to
-be between 5 and 105. Let's only change the color if we're within those
-bounds, because that will mean that we're clicking within a square
 
 ```ruby
   animate do
@@ -147,20 +145,14 @@ bounds, because that will mean that we're clicking within a square
 
     column = x / 100
     row = y / 100
-    over_x = x % 100
-    over_y = y % 100
 
     if button == 1
-      if (5..105).include?(over_x) 
-        if (5..105).include?(over_y)
-          alert("I have clicked in a square!")
-        end
-      end
+      alert("I have clicked on square: #{column}, #{row}")
     end
   end
 ```
 
-[Ed note: Whoops! what happens if we click on that free space? Why does it still say we
+[Ed note: Whoops! what happens if we click on that free/non-board space? Why does it still say we
 clicked on a square? I imagine some smart kids may find this out OR know the answer!]
 
 Now that we know we're within a square, we need to update that specific spot on
@@ -173,19 +165,13 @@ the column and row to verify this, but let's grab it out of the @board array as 
 
     column = x / 100
     row = y / 100
-    over_x = x % 100
-    over_y = y % 100
 
     if button == 1
-      if (5..105).include?(over_x) 
-        if (5..105).include?(over_y)
-          @board[(7 * row) + column].style(:fill => red)
-        end
-      end
+      space = (7 * row) + column)
+      @board[space].style(:fill => red)
     end
   end
 ```
-(Could also save `(7 * row) + column` as a variable "space")
  
 That's kind of complicated. What's going on here? Well, if you recall, `@board`
 is an array (or bucket) of  42 (0-41) rectangles. We need to pull out of
@@ -205,7 +191,6 @@ Now, that's kind of cool. We could color all sorts of things with this.
 [Ed note: Possibly even talk about how if we made the rectangles small enough,
 we could draw pixelated pictures, maybe mention how it's like minecraft? haha]
 
-[Possibly end of day 1]
 
 # Experiment with picking colors and setting them as a variable (colorpicker.com)
 
@@ -244,43 +229,99 @@ Shoes.app :width => 900, :height => 625 do
 We start this `@turn` variable out at 0 because we're going to count each time we make
 a click and place an item.
 
+
 ```ruby
   animate do
     button, x, y = self.mouse
 
     column = x / 100
     row = y / 100
-    over_x = x % 100
-    over_y = y % 100
 
     if button == 1
-      if (5..105).include?(over_x) 
-        if (5..105).include?(over_y)
-          @turn += 1 # Or @turn = @turn + 1
-          if @turn % 2 == 1
-            color = red
-          else 
-            color = black
-          end
-          alert("The turn count is: #{@turn} and % 2 is #{@turn % 2}")
-          @board[(7 * row) + column].style(:fill => color)
-        end
+      space = (7 * row) + column
+
+      @turn += 1
+      if @turn % 2 == 1
+        color = red
+      else 
+        color = black
       end
+
+
+      alert("The turn count is: #{@turn} and % 2 is #{@turn % 2}")
+      @board[space].style(:fill => color)
     end
   end
 ```
-The modulus is back! This time we're keeping track of if `@turn` is even or odd. If the
+
+The '%' symbol is called the 'modulus' operator. It's the way to find out
+what's left over. So 102 / 100 would be 1 (there is one full 100 in 102),
+and 102 % 100 would be 2 (there are 2 left over after we take out the 100).
+
+We're using the modulus operator to keep track of if `@turn` is even or odd. If the
 number is odd it will have a remainder (stuff left over) after trying to take as many
 2's as it has. Play around with this a bit and get an idea of how the mod is going to 
 change after each turn. It should only go between 0 and 1 because any given number
 is either going to be even or odd!
 
-> increment @turn and check if it's even or odd
+# Prevent overwriting a color
+
+The only problem with this now is you can click the same place it overwrites the color.
+We need a way to keep track which square has been clicked. One way of doing this is to
+store the index of `@board` that has been clicked on, and put it in a new list: `@picked`
+
+```ruby
+Shoes.app :width => 900, :height => 625 do
+  blue = "#0000FF"
+  @board = []
+  @picked = []
+  @turn = 0
+```
+
+Once we create this `@picked` list, we need to start adding numbers into it when we click.
+
+```ruby
+    if button == 1
+      space = (7 * row) + column
+
+      @turn += 1
+      if @turn % 2 ==1
+        color = red
+      else
+        color = black
+      end
+
+      @board[space].style(:fill => color)
+      @picked << space
+    end
+```
+
+Now that we're tracking these elements, as we click on the grid we can see that we're
+still able to overwrite the other squares. The last step we need to do is ensure we don't
+change turn, change color, or fill in a board space if an item has already been picked.
+
+```ruby
+
+    if button == 1
+      space = (7 * row) + column
+
+      if !@picked.include?(space)
+        @turn += 1
+        if @turn % 2 ==1
+          color = red
+        else
+          color = black
+        end
+
+        @board[space].style(:fill => color)
+        @picked << space
+      end
+    end
+```
+
+
 * Pick square at bottom of clicked column
 > because of our column set of arrays,we know we can take the last element there and multiply
 >   it by the total number of rows to get it to the botom position. We then have to offset where that bottom position is
 >   based on current "column" from the mouse
 > MATH
-* Keep track of picked "spaces"
-> explain how it's an index in @board that we're tracking as arrays in @picked
-> don't over-draw them with blue
