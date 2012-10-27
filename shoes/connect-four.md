@@ -16,7 +16,7 @@ constructed, and work towards placing pieces at a given location. There's room a
 end to go past that, but that's our goal.
 
 
-Get started by downloading a copy of an intro Shoes app [here](https://github.com/brntbeer/Lesson-Plans/tree/connect-four/shoes/connect-four-intro.rb).
+Get started by download or copying the intro Shoes app [here](https://github.com/brntbeer/Lesson-Plans/tree/connect-four/shoes/connect-four-intro.rb).
 
 
 ### Prereqs - Installing Shoes and a text editor
