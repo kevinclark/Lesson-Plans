@@ -20,20 +20,18 @@ Shoes.app :width => 900, :height => 625 do
 
   animate do
     button, x,y = self.mouse
+
     column = x / 100
     row = y / 100
-    over_x = x % 100
-    over_y = y % 100
+
     if button == 1
-      if (5..105).include?(over_x)
-        if (5..105).include?(over_y)
-          @turn+=1
-          color = @turn % 2 == 1 ? red : black
-          space = (@columns[column].last*7)+column
-          @board[space].style(:fill => color)
-          @picked << space
-          @columns[column].pop
-        end
+      space = (@columns[column].last*7)+column
+      if !@picked.include?(space)
+        @turn+=1
+        color = @turn % 2 == 1 ? red : black
+        @board[space].style(:fill => color)
+        @picked << space
+        @columns[column].pop
       end
     end
   end
