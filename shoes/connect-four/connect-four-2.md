@@ -4,9 +4,6 @@
 ### Prereqs
 
 
-# Updating who's turn it is
-* label on the side?
-
 # Keeping track of columns
 * pre fill in the column
 * column variable array of arrays
@@ -25,8 +22,23 @@
 * horizontal
 * diagonal
 * * How can we narrow down diagonal? (Dont need to check everywhere!)
+* Why are we breaking this out into methods?
+* * helps organize thoughts better!
+* Ranges in ruby for the ranges
+* * Explain the values we use for accessing/looping in @board
+* Count can take a block
+* could do something like ` @board[(row*7)..(row*7+6)].count{|rect| rect.style == color} >= 4`
+  but this wont work for making sure it's all connected / lined up.
+* Can't just count the total in that row.
+* * what if the color isnt all one after another
+* * drop_while
+* * take_while
+
 
 # resetting the game
 * button with reset
 
 # keeping track of wins even after a reset
+
+# Updating who's turn it is
+* label on the side?
