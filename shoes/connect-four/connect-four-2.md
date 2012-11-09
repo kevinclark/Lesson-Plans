@@ -1,8 +1,38 @@
 # Connect Four Complete
-(Summary of last game, where we're going to in this game)
+Today we're going to finish (or get as close as possible) to finishing the
+connect-four game we started building last time. Last time as we were building
+the game we got as far as having our game grid, making it clickable, and changing
+the color on a square that wasnt picked already with 2 alternating colors.
 
-### Prereqs
+In today's session we're going to focus on two main things: "dropping" the piece
+to the bottom of a column with stacking, and calculating if our game is finished. 
+Time permitted we have some additional items that students will be encouraged to
+work on in a more free-style type class.
 
+
+### Prereqs - Installing Shoes and a text editor
+
+On windows, download and unzip **Shoes 3 +video for Windows**
+* [http://github.com/downloads/shoes/shoes/shoes3.exe.zip](http://github.com/downloads/shoes/shoes/shoes3.exe.zip)
+
+Download and install **Notepad++**
+* [http://download.tuxfamily.org/notepadplus/6.1.3/npp.6.1.3.Installer.exe](http://download.tuxfamily.org/notepadplus/6.1.3/npp.6.1.3.Installer.exe)
+
+#### Mac OSX
+
+On Mac OSX 10.6 (Snow Leopard) and 10.7 (Lion), download **Shoes 3**.
+Open the dmg file, and copy the Shoes app to your computer.
+* https://github.com/downloads/shoes/shoes/shoes-3.1.0.dmg
+
+Download and open **Text Wrangler**
+* http://ash.barebones.com/TextWrangler_4.0.1.dmg
+
+*NOTE* Windows users cannot do alert inside of an animate block. change `animate do`
+to `click do` or `if button == 1` calls to a `click do` call
+
+### Previous instructions
+If you weren't with us last time, that's ok! You can download a copy of the code
+we used last time [here](https://github.com/brntbeer/Lesson-Plans/blob/master/shoes/connect-four.rb).
 
 # Keeping track of columns
 * pre fill in the column
@@ -33,6 +63,9 @@
 * * what if the color isnt all one after another
 * * drop_while
 * * take_while
+* * * Could either chain these commands together, or instead of reassigning, use `take_while!` and `drop_while!`
+* * * also talking points about how i found these methods and discovered they
+worked for me would be useful
 
 
 # resetting the game
