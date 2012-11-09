@@ -32,7 +32,63 @@ Shoes.app :width => 900, :height => 625 do
         @board[space].style(:fill => color)
         @picked << space
         @columns[column].pop
+        if solved?(color)
+          alert("#{color} wins!")
+        end
       end
+    end
+  end
+
+  #check if the map is solved
+  def solved?(color)
+    if horizontal_win(color) || vertical_win(color)
+      return true
+    else
+      return false
+    end
+  end
+
+  #loop through all rows to see if any given row contains
+  # 4 continuous blocks of one color.
+  # start at beginning of row, if you hit a different style than
+  #  color, there is not a horizontal win on this row.
+  #  This is because we need color to be all in a row, you only
+  #  start this continuous count after the first color is found
+  def horizontal_win(color)
+    6.times do |row|
+      current_row = @board[(row*7)..(row*7+6)]
+      current_row = current_row.drop_while{|rect| rect.style[:fill] != color}
+      current_row = current_row.take_while{|rect| rect.style[:fill] == color}
+      if current_row.count >= 4
+        return true
+      end
+    end
+    false
+  end
+
+  #loop through all columns to see if any given column contains
+  # 4 continuous blocks of one color.
+  # for each column, add 0, 7, 14, 21, 28, 35
+  def vertical_win(color)
+    7.times do |column|
+      current_column = [0,7,14,21,28,35].collect{|num| @board[column+num]}
+      current_column = current_column.drop_while{|rect| rect.style[:fill] != color}
+      current_column = current_column.take_while{|rect| rect.style[:fill] == color}
+      if current_column.count >= 4
+        return true
+      end
+    end
+    false
+  end
+
+  # 6 total diagonals with length >= 4
+  # @board[3][0] -> @board[0][3]
+  # until
+  # @board[5][3] -> @board[2][6]
+  #
+  # a Simple way would be to manually count along each diagonal
+  def diagonal_win
+    6.times do
     end
   end
 
