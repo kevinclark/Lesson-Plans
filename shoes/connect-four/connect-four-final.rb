@@ -59,7 +59,7 @@ Shoes.app :width => 900, :height => 625 do
       current_row = @board[(row*7)..(row*7+6)]
       continuous_row_count = 0
       position = 0
-      while(position < current_row.length && continuous_row_count != 4)
+      while(position < current_row.length && continuous_row_count != 4) do
         if(current_row[position].style[:fill] == color)
           continuous_row_count += 1
         else
