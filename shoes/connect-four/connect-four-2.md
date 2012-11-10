@@ -31,8 +31,8 @@ Download and open **Text Wrangler**
 to `click do` or `if button == 1` calls to a `click do` call
 
 ### Previous instructions
-If you weren't with us last time, that's ok! You can download a copy of the code
-we used last time [here](https://github.com/brntbeer/Lesson-Plans/blob/master/shoes/connect-four.rb).
+If you weren't with us last time, that's ok! You can
+###[download it here](https://github.com/brntbeer/Lesson-Plans/blob/master/shoes/connect-four/connect-four.rb).
 
 # Keeping track of columns
 It's true we have a fixed number of columns to use for this game, but how might we
