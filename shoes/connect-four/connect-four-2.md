@@ -176,7 +176,7 @@ methods (diagonal, horizontal, vertical).]
 
   #check if the map is solved
   def solved?(color)
-    if horizontal_win(color) || vertical_win(color)
+    if vertical_win(color) || horizontal_win(color)
       return true
     else
       return false
