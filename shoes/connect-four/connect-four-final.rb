@@ -57,9 +57,18 @@ Shoes.app :width => 900, :height => 625 do
   def horizontal_win(color)
     6.times do |row|
       current_row = @board[(row*7)..(row*7+6)]
-      current_row = current_row.drop_while{|rect| rect.style[:fill] != color}
-      current_row = current_row.take_while{|rect| rect.style[:fill] == color}
-      if current_row.count >= 4
+      continuous_row_count = 0
+      position = 0
+      while(position < current_row.length && continuous_row_count != 4)
+        if(current_row[position].style[:fill] == color)
+          continuous_row_count += 1
+        else
+          continuous_row_count = 0
+        end
+        position+= 1
+      end
+
+      if continuous_row_count >= 4
         return true
       end
     end
