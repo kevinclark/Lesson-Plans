@@ -17,11 +17,27 @@ When we specify a dash and then a number, that tells `log` how many recent commi
 be returned to us. If we think of `git log` as a way to look back in time, the ordering
 of these commits returned makes sense to be from most recent to oldest.
 
-* `git log --pretty=oneline` or (oneline, short, medium[default], full, fuller, email, raw)
-  * format the way you want to view your logs
+Seeing the commits and their messages can be pretty important, but we can also format
+these commits to give us more of less information.
 
-Now that we can control how many commits we see by number, we can focus on some actual
-content within the commits.
+* `git log --pretty=oneline` or (oneline, short, medium[default], full, fuller, email, raw)
+
+`--pretty=` will allow us to vary the control of what our commit messages show. By
+default `git log` uses `medium`, but we can see that with `oneline` or `short` we can
+change what kind of embedded information we are presented with. For instance, if I
+didn't want to see committer, author, or date information and only cared about the
+subject of a commit message (first line), oneline is clearly best. However, if I have a
+more complicated project and want to see both authored date and commit date, I'd want
+to use `fuller`. The commit date is the date that is shown by default with `medium`, but
+depending on different types of collaboration, your commit may have actually been
+authored many days previous [Ed Note: If I made a commit, created a Pull request, and
+had that pull request accepted 3 days later, the difference in authored and commit date
+would be 3 days]
+
+Now that we can control how many commits we see, and what level of detail we see in the
+summary, often we want to filter these results even more before we start digging through
+content.
+
 
 ##Filtering results
 
