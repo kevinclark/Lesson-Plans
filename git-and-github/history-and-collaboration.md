@@ -23,6 +23,30 @@ of these commits returned makes sense to be from most recent to oldest.
 Now that we can control how many commits we see by number, we can focus on some actual
 content within the commits.
 
+##Filtering results
+
+* `git log --grep="add"`
+`--grep` is used just like you'd use it from the command line, you have to say
+specifically what you'd want to search for. When we use a term to grep for, we're only
+going to search the log for that term in the commit message itself. This is one example
+of why a descriptive commit message could be super useful (besides just allowing friends
+or coworkers to see what you're up to without reading your code.
+
+* `git log --diff-filter=R` needs `-M` or `-C` etc
+  * find commits with only particular things, like renames
+  * Matthew once committed a bunch of renames without fixing links, to find out what the files
+    were and renamed to, I used this in corrdination with `--author="matthew"`
+
+* `git log --since="2 weeks ago"
+  * grab all the commits that happened between now and 2 weeks ago
+* `git log --before="2 weeks ago"
+  * grab commits that happened from 2 weeks ago and OLDER
+* `git log 6cb8fdd...9c014a9` ie: all logs AFTER `6cb8fdd` until `9c014a9`
+  * Similar to github.com/user/repo/compare/master@{2.weeks.ago}...master
+
+* `git log --author="brent"`
+  * find commits only authored by a given person
+
 ##Viewing Content
 
 * `git log --stat`
@@ -79,29 +103,6 @@ place.
 Now that we can see specific changes in a commit, how do we find a specific commit? One
 way to do so would be with the `--grep` flag.
 
-##Filtering results
-
-* `git log --grep="add"`
-`--grep` is used just like you'd use it from the command line, you have to say
-specifically what you'd want to search for. When we use a term to grep for, we're only
-going to search the log for that term in the commit message itself. This is one example
-of why a descriptive commit message could be super useful (besides just allowing friends
-or coworkers to see what you're up to without reading your code.
-
-* `git log --diff-filter=R` needs `-M` or `-C` etc
-  * find commits with only particular things, like renames
-  * Matthew once committed a bunch of renames without fixing links, to find out what the files
-    were and renamed to, I used this in corrdination with `--author="matthew"`
-
-* `git log --since="2 weeks ago"
-  * grab all the commits that happened between now and 2 weeks ago
-* `git log --before="2 weeks ago"
-  * grab commits that happened from 2 weeks ago and OLDER
-* `git log 6cb8fdd...9c014a9` ie: all logs AFTER `6cb8fdd` until `9c014a9`
-  * Similar to github.com/user/repo/compare/master@{2.weeks.ago}...master
-
-* `git log --author="brent"`
-  * find commits only authored by a given person
 
 
 * Chaining previous flags together
