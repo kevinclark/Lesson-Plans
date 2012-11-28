@@ -1,4 +1,5 @@
-Follow commands and github references by in large are in reference to github/teach.github.com
+The following commands and github references by in large are in reference to github/teach.github.com
+unless otherwise specified.
 
 #Git Log
 Git log is a super valuable tool when keeping track of your project. From just getting
@@ -41,33 +42,45 @@ content.
 
 ##Filtering results
 
+* `git log --author="brent"`
+  * find commits only authored by a given person
+
 * `git log --grep="add"`
+
 `--grep` is used just like you'd use it from the command line, you have to say
 specifically what you'd want to search for. When we use a term to grep for, we're only
 going to search the log for that term in the commit message itself. This is one example
 of why a descriptive commit message could be super useful (besides just allowing friends
-or coworkers to see what you're up to without reading your code.
+or coworkers to see what you're up to without reading your code).
 
-* `git log --diff-filter=R` needs `-M` or `-C` etc
-  * find commits with only particular things, like renames
-  * Matthew once committed a bunch of renames without fixing links, to find out what the files
-    were and renamed to, I used this in corrdination with `--author="matthew"`
+* `git log --diff-filter=R` (needs `-M` or `-C` etc for renames)
+
+The `diff-filter=` command is super useful when you're wanting to find commits that did
+specific things. Some of the more common flags are: Added (A), Copied (C), Deleted (D),
+Modified (M), Renamed (R). The Rename or Copy flag are ones that I've found particularly
+useful due to the simple nature of finding commits with only renames.
+
+One specific example of when I've had to filter on a rename was a few weeks ago for our
+teach.github.com repo when I had noticed a few links were not working as intended.
+It had seemed the pages those links were pointing to no longer existed, and I had a hunch
+that they were simply renamed. By using `--diff-filter=R -M` I was able to more
+appropriately get an idea of which commits included those renames. Using an additional
+flag of `-p` allows me to actually see those renames.
 
 * `git log --since="2 weeks ago"
   * grab all the commits that happened between now and 2 weeks ago
 * `git log --before="2 weeks ago"
   * grab commits that happened from 2 weeks ago and OLDER
-* `git log 6cb8fdd...9c014a9` ie: all logs AFTER `6cb8fdd` until `9c014a9`
+* `git log gh-pages@{2.weeks.ago}...gh-pages`
   * Similar to github.com/user/repo/compare/master@{2.weeks.ago}...master
-
-* `git log --author="brent"`
-  * find commits only authored by a given person
 
 ##Viewing Content
 
 * `git log --stat`
+
 The `--stat` flag is useful in cases of wanting to know which files were affected in
 a particular commit.
+
 ```
 [/github/teach.github.com]$ git log --stat
 commit 5c6d6f89e5f1d4137faf2af31275456dbb8cd166
@@ -79,6 +92,7 @@ Date:   Fri Nov 23 17:16:56 2012 -0800
  examples/_posts/2001-01-01-example-hooks.md |    2 +-
  1 files changed, 1 insertions(+), 1 deletions(-)
 ```
+
 This gives us a bit higher view of what we're actually dealing with in terms of how many
 lines were changed in a commit. So we know there was an one line change to this particular
 file, but we don't actually know what this change involved. To view this, we need to see
@@ -113,21 +127,18 @@ because there had only been one file changed in this commit. This is a small cha
 we see there was one line removed, and another almost identical line was inserted in it's 
 place.
 
-* `git log --word-diff`
-  * if only a particular place in a line was changed, show that in-line
+* `git log --word-diff -p`
 
-Now that we can see specific changes in a commit, how do we find a specific commit? One
-way to do so would be with the `--grep` flag.
+We can see with `--word-diff` that Git actually knows this change was really changing
+that same line.
 
-
-
-* Chaining previous flags together
 
 #GitHub Collaboration
 * closing issue from commit messages
   * `git log --grep="fixed"` or `git log --grep="closed"`
 * Pull Request
   * Outdated diff link
+  * doorkeeper-provider-devise app?
 * Any Comment thread (including a pull request)
   * Mentions ('@matthewmccullough', and auto-completing?)
   * sha1 hash of another commit link (it's smart, it'll automatically detect the sha)
