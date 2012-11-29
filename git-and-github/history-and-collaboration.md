@@ -1,6 +1,9 @@
 The following commands and GitHub references by in large are in reference to <https://github.com/githu/teach.github.com>
 unless otherwise specified.
 
+To follow along: `git clone https://github.com/brntbeer/teach.gitub.com` and navigate
+into the project from your terminal.
+
 #Git Log
 Git log is a super valuable tool when keeping track of your project. From just getting
 a summary of who commited lately, to what was specifically commited, to even investigating
