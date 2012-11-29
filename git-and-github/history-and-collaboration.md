@@ -1,4 +1,4 @@
-The following commands and github references by in large are in reference to github/teach.github.com
+The following commands and GitHub references by in large are in reference to <https://github.com/githu/teach.github.com>
 unless otherwise specified.
 
 #Git Log
