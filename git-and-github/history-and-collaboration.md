@@ -76,7 +76,7 @@ flag of `-p` allows me to actually see those renames.
 
 ##Viewing Content
 
-* `git log --stat`
+* `git log -1 --stat`
 
 The `--stat` flag is useful in cases of wanting to know which files were affected in
 a particular commit.
@@ -98,7 +98,7 @@ lines were changed in a commit. So we know there was an one line change to this 
 file, but we don't actually know what this change involved. To view this, we need to see
 the commit's patch.
 
-* `git log -p`
+* `git log -1 -p`
 
 ```
 [/github/teach.github.com]$ git log -p
@@ -127,7 +127,29 @@ because there had only been one file changed in this commit. This is a small cha
 we see there was one line removed, and another almost identical line was inserted in it's 
 place.
 
-* `git log --word-diff -p`
+* `git log -1 -p --word-diff`
+
+```
+[/github/teach.github.com]$ git log -1 -p --word-diff
+commit 5c6d6f89e5f1d4137faf2af31275456dbb8cd166
+Author: brntbeer <brent.beer@gmail.com>
+Date:   Fri Nov 23 17:16:56 2012 -0800
+
+    fixed path for example hooks
+
+diff --git a/examples/_posts/2001-01-01-example-hooks.md b/examples/_posts/2001-
+index 217e87e..78957e7 100644
+--- a/examples/_posts/2001-01-01-example-hooks.md
++++ b/examples/_posts/2001-01-01-example-hooks.md
+@@ -2,7 +2,7 @@
+layout: exampleswithrelated
+title: Git Hooks
+description: An example of hooks and their power for lifecycle driven activities
+path: [-examples/_posts/2001-01-01-example-hooks.md-]{+examples/hooks/+}
+examples: post-receive-email-SMTP.py
+tags: [example, code]
+---
+```
 
 We can see with `--word-diff` that Git actually knows this change was really changing
 that same line.
