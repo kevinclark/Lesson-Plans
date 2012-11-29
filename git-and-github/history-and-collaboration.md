@@ -156,11 +156,27 @@ that same line.
 
 
 #GitHub Collaboration
+[Ed Note: `git checkout collaboration-testing` before running through these examples, as
+some of these only exist on that branch from @brntbeer's repo]
+
 * closing issue from commit messages
-  * `git log --grep="fixed"` or `git log --grep="closed"`
+  * `git log --grep="fixed"` or `git log --grep="Close"`
+We can see if we look for previous commits with `--grep="Close"` that there is already
+at least 1 commit that closed an issue. We can easily re-create this live as well.
+
 * Pull Request
-  * Outdated diff link
-  * doorkeeper-provider-devise app?
+Collaborating on a pull request is incredibly important when working with other team
+members or other developers in general. I think it's super useful to send pull requests
+often, especially when I'm working on a repository that isn't my own. This allows me to
+not step on anyones toes, even if I have access to push to that repository. This is my
+prefered method of collaboration within the training team.
+
+Sometimes, I'll receive feedback requesting I change some of my fixes. This isn't a
+problem, but what happens to the context of what needs fixed once it already is? You may
+already know that a pull request will update as new commits come in, but we don't want
+to forget that useful conversation about the newer commits. GitHub will actually store
+those commits and hide it from the current context. <https://github.com/brntbeer/teach.github.com/pull/3>
+
 * Any Comment thread (including a pull request)
   * Mentions ('@matthewmccullough', and auto-completing?)
   * sha1 hash of another commit link (it's smart, it'll automatically detect the sha)
