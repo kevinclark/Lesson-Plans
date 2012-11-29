@@ -159,12 +159,13 @@ that same line.
 [Ed Note: `git checkout collaboration-testing` before running through these examples, as
 some of these only exist on that branch from @brntbeer's repo]
 
+## Pull Request and Issues
+
 * closing issue from commit messages
   * `git log --grep="fixed"` or `git log --grep="Close"`
 We can see if we look for previous commits with `--grep="Close"` that there is already
 at least 1 commit that closed an issue. We can easily re-create this live as well.
 
-* Pull Request
 Collaborating on a pull request is incredibly important when working with other team
 members or other developers in general. I think it's super useful to send pull requests
 often, especially when I'm working on a repository that isn't my own. This allows me to
@@ -177,30 +178,30 @@ already know that a pull request will update as new commits come in, but we don'
 to forget that useful conversation about the newer commits. GitHub will actually store
 those commits and hide it from the current context. <https://github.com/brntbeer/teach.github.com/pull/3>
 
-* Any Comment thread (including a pull request)
+## Commenting and Linking
 
-  * Mentions
+* Mentions
 
 Using mentions to get someone's specific attention can be useful. You can do this with
 a bit of auto-completion and the `@` symbol. This is perfect for getting some peer
 review from someone who may otherwise not be watching for updates on this repo or if you
 know a section of your code affects them.
 
-  * sha1 hash of another commit link (it's smart, it'll automatically detect the sha)
+* Commit Hash Referencing from anywhere (it's smart, it'll automatically detect the sha)
 
 Mention an entire commit from anywhere a comment is allowed helps tie things together
 nicely. We can see this if we dig out an old commit hash from `git log` and paste it
 into a comment box. One example of this would be to comment in one of our existing
 issues or pull requests. <https://github.com/brntbeer/teach.github.com/issues/4>
 
-  * referencing another issue link (#15)
+* referencing another issue link
 
 Even as we comment on #4, and link to #3, we can follow that link and see another issue
 has even referenced it. This allows anyone coming to the conversation later to get a
 full idea of what has happened.
 
 [Time permitting]
-  * Line linking of a particular file (even at a particular point in time)
+* Line linking of a particular file (even at a particular point in time)
 Line linking on a specific file or range of lines from that file also help to add context
 besides just commenting at that line.
 <https://github.com/brntbeer/teach.github.com/blob/gh-pages/stylesheets/page.css#L1-4>
