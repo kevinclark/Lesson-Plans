@@ -178,8 +178,29 @@ to forget that useful conversation about the newer commits. GitHub will actually
 those commits and hide it from the current context. <https://github.com/brntbeer/teach.github.com/pull/3>
 
 * Any Comment thread (including a pull request)
-  * Mentions ('@matthewmccullough', and auto-completing?)
+
+  * Mentions
+
+Using mentions to get someone's specific attention can be useful. You can do this with
+a bit of auto-completion and the `@` symbol. This is perfect for getting some peer
+review from someone who may otherwise not be watching for updates on this repo or if you
+know a section of your code affects them.
+
   * sha1 hash of another commit link (it's smart, it'll automatically detect the sha)
+
+Mention an entire commit from anywhere a comment is allowed helps tie things together
+nicely. We can see this if we dig out an old commit hash from `git log` and paste it
+into a comment box. One example of this would be to comment in one of our existing
+issues or pull requests. <https://github.com/brntbeer/teach.github.com/issues/4>
+
   * referencing another issue link (#15)
-    * also updates a message on to that issue saying that it was referenced somewhere else
+
+Even as we comment on #4, and link to #3, we can follow that link and see another issue
+has even referenced it. This allows anyone coming to the conversation later to get a
+full idea of what has happened.
+
+[Time permitting]
   * Line linking of a particular file (even at a particular point in time)
+Line linking on a specific file or range of lines from that file also help to add context
+besides just commenting at that line.
+<https://github.com/brntbeer/teach.github.com/blob/gh-pages/stylesheets/page.css#L1-4>
