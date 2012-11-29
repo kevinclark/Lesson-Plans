@@ -1,4 +1,4 @@
-The following commands and GitHub references by in large are in reference to <https://github.com/githu/teach.github.com>
+The following commands and GitHub references by in large are in reference to <https://github.com/brntbeer/teach.github.com>
 unless otherwise specified.
 
 To follow along: `git clone https://github.com/brntbeer/teach.gitub.com` and navigate
