@@ -162,18 +162,64 @@ that same line.
 [Ed Note: `git checkout collaboration-testing` before running through these examples, as
 some of these only exist on that branch from @brntbeer's repo]
 
-## Pull Request and Issues
-
-* closing issue from commit messages
-  * `git log --grep="fixed"` or `git log --grep="Close"`
-We can see if we look for previous commits with `--grep="Close"` that there is already
-at least 1 commit that closed an issue. We can easily re-create this live as well.
-
-Collaborating on a pull request is incredibly important when working with other team
+Collaborating on a project is incredibly important when working with other team
 members or other developers in general. I think it's super useful to send pull requests
 often, especially when I'm working on a repository that isn't my own. This allows me to
 not step on anyones toes, even if I have access to push to that repository. This is my
-prefered method of collaboration within the training team.
+prefered method of collaboration with any project I'm working on.
+
+
+## Issues
+* File an issue
+  * Issue structure: assigned to, milestone, labels
+As the name suggest, issues are often used to file about things that are wrong or things
+that are broken. But this doesn't have to always be the case, it can be used a project
+management tool to track progression towards a larger milestone as well as what someone
+is specifically working on. In the past I would often create issues of my daily or weekly
+items and assign them priority tags and work towards a milestone for the end of a sprint.
+
+  * Fill out the issue's message. @reply to someone on it
+Using mentions to get someone's specific attention can be useful. You can do this with
+a bit of auto-completion and the `@` symbol. This is perfect for getting some peer
+review from someone who may otherwise not be watching for updates on this repo or if you
+know a section of your code affects them.
+
+* Comment on the issue
+Once this issue is filed, we can see comments on the thread as they come in and really
+give us a sense of the conversation that's happening.
+
+* reply to the issue with a sha1 hash complaining that commit broke something
+  * show that it links
+Mention an entire commit from anywhere a comment is allowed helps tie things together
+nicely. We can see this if we dig out an old commit hash from `git log` and paste it
+into a comment box.
+
+* ask specifics about the commit
+Although this commit may help to give us additional context to where an issue actually
+is, we may not know the specifics about the issue that's be filed. Thats where line
+linking can come into play. After a bit of conversation back and forth it may be
+easiest to just say, "Take a look at these lines here, this is the broken part" and
+link to the actual file:
+<https://github.com/brntbeer/teach.github.com/blob/gh-pages/stylesheets/page.css#L1-4>
+
+* close issue from commit message.
+Once we see where the actual problem is at, we can create a commit and close this issue.
+We can see if we look for previous commits with `--grep="Close"` that there is already
+at least 1 commit that closed an issue.
+
+## Pull Request
+
+* Files an issue when made
+* Can reference other issues it may fix from the comments/message as well
+  * link to an open issue and see the mention on the issue from this pull request
+* additional commits after some comments are rolling.
+
+* Comment on a commit and see it pulled to the pull request discussion
+Even as we comment on #4, and link to #3, we can follow that link and see another issue
+has even referenced it. This allows anyone coming to the conversation later to get a
+full idea of what has happened.
+
+* Fix the section commented on and see it become an "Outdated diff"
 
 Sometimes, I'll receive feedback requesting I change some of my fixes. This isn't a
 problem, but what happens to the context of what needs fixed once it already is? You may
@@ -181,30 +227,3 @@ already know that a pull request will update as new commits come in, but we don'
 to forget that useful conversation about the newer commits. GitHub will actually store
 those commits and hide it from the current context. <https://github.com/brntbeer/teach.github.com/pull/3>
 
-## Commenting and Linking
-
-* Mentions
-
-Using mentions to get someone's specific attention can be useful. You can do this with
-a bit of auto-completion and the `@` symbol. This is perfect for getting some peer
-review from someone who may otherwise not be watching for updates on this repo or if you
-know a section of your code affects them.
-
-* Commit Hash Referencing from anywhere (it's smart, it'll automatically detect the sha)
-
-Mention an entire commit from anywhere a comment is allowed helps tie things together
-nicely. We can see this if we dig out an old commit hash from `git log` and paste it
-into a comment box. One example of this would be to comment in one of our existing
-issues or pull requests. <https://github.com/brntbeer/teach.github.com/issues/4>
-
-* referencing another issue link
-
-Even as we comment on #4, and link to #3, we can follow that link and see another issue
-has even referenced it. This allows anyone coming to the conversation later to get a
-full idea of what has happened.
-
-[Time permitting]
-* Line linking of a particular file (even at a particular point in time)
-Line linking on a specific file or range of lines from that file also help to add context
-besides just commenting at that line.
-<https://github.com/brntbeer/teach.github.com/blob/gh-pages/stylesheets/page.css#L1-4>
