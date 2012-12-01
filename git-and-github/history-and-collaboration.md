@@ -208,22 +208,38 @@ We can see if we look for previous commits with `--grep="Close"` that there is a
 at least 1 commit that closed an issue.
 
 ## Pull Request
+Pull-request work very similarly to issues. Except, instead of just starting a discussion
+you're actually putting some code behind it. Code speaks louder than words. Also, an
+issue is filed when you create a pull-request because of how closely they are related
+to one another.
 
-* Files an issue when made
 * Can reference other issues it may fix from the comments/message as well
   * link to an open issue and see the mention on the issue from this pull request
+Maybe you're creating a pull-request to knock out a few issues. In doing so, you
+can refer to those issues in your initial pull-request. When we do this, we can go
+look at those issues and see that they all get updated with links to the pull-request
+because they were mentioned. This is just one way that GitHub helps tie everything
+together and ensure that if you want to preserve historical references and your
+mindset, you can.
+
 * additional commits after some comments are rolling.
+When we have our pull-request filed, we may get some comments about it either giving
+us support, or requesting some additional changes. Let's assume we get asked for
+some fixes.
+
+When we make these fixes and push to our branch, we don't need to re-submit a
+pull-request. The commits are put right there in line with the comments, really
+keeping up as items of the conversation.
 
 * Comment on a commit and see it pulled to the pull request discussion
-Even as we comment on #4, and link to #3, we can follow that link and see another issue
-has even referenced it. This allows anyone coming to the conversation later to get a
-full idea of what has happened.
+One of these new commits may get the attention of someone not watching the pull-request.
+In that case, they may comment on that commit itself (either line comment or full commit
+comment). When they do this, even though it's not in the pull-request, the comment is
+pulled to the pull-request ensuring all the conversation is in one location.
 
 * Fix the section commented on and see it become an "Outdated diff"
-
 Sometimes, I'll receive feedback requesting I change some of my fixes. This isn't a
 problem, but what happens to the context of what needs fixed once it already is? You may
 already know that a pull request will update as new commits come in, but we don't want
 to forget that useful conversation about the newer commits. GitHub will actually store
 those commits and hide it from the current context. <https://github.com/brntbeer/teach.github.com/pull/3>
-
