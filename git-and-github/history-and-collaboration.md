@@ -55,6 +55,16 @@ specifically what you'd want to search for. When we use a term to grep for, we'r
 going to search the log for that term in the commit message itself. This is one example
 of why a descriptive commit message could be super useful (besides just allowing friends
 or coworkers to see what you're up to without reading your code).
+  * Grep will even look at words you're not actually seeing (pretty=short but word exists
+  in the message body, still finds it!)
+
+_Bonus Online Material_
+* `git log --since="2 weeks ago"
+  * grab all the commits that happened between now and 2 weeks ago
+* `git log --before="2 weeks ago"
+  * grab commits that happened from 2 weeks ago and OLDER
+* `git log gh-pages@{2.weeks.ago}...gh-pages`
+  * Similar to github.com/user/repo/compare/master@{2.weeks.ago}...master
 
 * `git log --diff-filter=R` (needs `-M` or `-C` etc for renames)
 
@@ -70,12 +80,6 @@ that they were simply renamed. By using `--diff-filter=R -M` I was able to more
 appropriately get an idea of which commits included those renames. Using an additional
 flag of `-p` allows me to actually see those renames.
 
-* `git log --since="2 weeks ago"
-  * grab all the commits that happened between now and 2 weeks ago
-* `git log --before="2 weeks ago"
-  * grab commits that happened from 2 weeks ago and OLDER
-* `git log gh-pages@{2.weeks.ago}...gh-pages`
-  * Similar to github.com/user/repo/compare/master@{2.weeks.ago}...master
 
 ##Viewing Content
 
@@ -172,29 +176,34 @@ prefered method of collaboration with any project I'm working on.
 ## Issues
 * File an issue
   * Issue structure: assigned to, milestone, labels
-As the name suggest, issues are often used to file about things that are wrong or things
-that are broken. But this doesn't have to always be the case, it can be used a project
-management tool to track progression towards a larger milestone as well as what someone
-is specifically working on. In the past I would often create issues of my daily or weekly
-items and assign them priority tags and work towards a milestone for the end of a sprint.
+
+  As the name suggest, issues are often used to file about things that are wrong or things
+  that are broken. But this doesn't have to always be the case, it can be used a project
+  management tool to track progression towards a larger milestone as well as what someone
+  is specifically working on. In the past I would often create issues of my daily or weekly
+  items and assign them priority tags and work towards a milestone for the end of a sprint.
 
   * Fill out the issue's message. @reply to someone on it
-Using mentions to get someone's specific attention can be useful. You can do this with
-a bit of auto-completion and the `@` symbol. This is perfect for getting some peer
-review from someone who may otherwise not be watching for updates on this repo or if you
-know a section of your code affects them.
+
+  Using mentions to get someone's specific attention can be useful. You can do this with
+  a bit of auto-completion and the `@` symbol. This is perfect for getting some peer
+  review from someone who may otherwise not be watching for updates on this repo or if you
+  know a section of your code affects them.
 
 * Comment on the issue
+
 Once this issue is filed, we can see comments on the thread as they come in and really
 give us a sense of the conversation that's happening.
 
 * reply to the issue with a sha1 hash complaining that commit broke something
   * show that it links
-Mention an entire commit from anywhere a comment is allowed helps tie things together
-nicely. We can see this if we dig out an old commit hash from `git log` and paste it
-into a comment box.
+
+  Mention an entire commit from anywhere a comment is allowed helps tie things together
+  nicely. We can see this if we dig out an old commit hash from `git log` and paste it
+  into a comment box.
 
 * ask specifics about the commit
+
 Although this commit may help to give us additional context to where an issue actually
 is, we may not know the specifics about the issue that's be filed. Thats where line
 linking can come into play. After a bit of conversation back and forth it may be
@@ -203,6 +212,7 @@ link to the actual file:
 <https://github.com/brntbeer/teach.github.com/blob/gh-pages/stylesheets/page.css#L1-4>
 
 * close issue from commit message.
+
 Once we see where the actual problem is at, we can create a commit and close this issue.
 We can see if we look for previous commits with `--grep="Close"` that there is already
 at least 1 commit that closed an issue.
@@ -215,14 +225,16 @@ to one another.
 
 * Can reference other issues it may fix from the comments/message as well
   * link to an open issue and see the mention on the issue from this pull request
-Maybe you're creating a pull-request to knock out a few issues. In doing so, you
-can refer to those issues in your initial pull-request. When we do this, we can go
-look at those issues and see that they all get updated with links to the pull-request
-because they were mentioned. This is just one way that GitHub helps tie everything
-together and ensure that if you want to preserve historical references and your
-mindset, you can.
+
+  Maybe you're creating a pull-request to knock out a few issues. In doing so, you
+  can refer to those issues in your initial pull-request. When we do this, we can go
+  look at those issues and see that they all get updated with links to the pull-request
+  because they were mentioned. This is just one way that GitHub helps tie everything
+  together and ensure that if you want to preserve historical references and your
+  mindset, you can.
 
 * additional commits after some comments are rolling.
+
 When we have our pull-request filed, we may get some comments about it either giving
 us support, or requesting some additional changes. Let's assume we get asked for
 some fixes.
@@ -232,12 +244,14 @@ pull-request. The commits are put right there in line with the comments, really
 keeping up as items of the conversation.
 
 * Comment on a commit and see it pulled to the pull request discussion
+
 One of these new commits may get the attention of someone not watching the pull-request.
 In that case, they may comment on that commit itself (either line comment or full commit
 comment). When they do this, even though it's not in the pull-request, the comment is
 pulled to the pull-request ensuring all the conversation is in one location.
 
 * Fix the section commented on and see it become an "Outdated diff"
+
 Sometimes, I'll receive feedback requesting I change some of my fixes. This isn't a
 problem, but what happens to the context of what needs fixed once it already is? You may
 already know that a pull request will update as new commits come in, but we don't want
