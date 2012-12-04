@@ -63,8 +63,8 @@ _Bonus Online Material_
   * grab all the commits that happened between now and 2 weeks ago
 * `git log --before="2 weeks ago"
   * grab commits that happened from 2 weeks ago and OLDER
-* `git log gh-pages@{2.weeks.ago}...gh-pages`
-  * Similar to github.com/user/repo/compare/master@{2.weeks.ago}...master
+* `git log gh-pages...gh-pages@{2.weeks.ago}
+  * Similar to https://github.com/github/teach.github.com/compare/gh-pages@%7B2.days.ago%7D...gh-pages
 
 * `git log --diff-filter=R` (needs `-M` or `-C` etc for renames)
 
@@ -178,7 +178,7 @@ prefered method of collaboration with any project I'm working on.
   * Issue structure: assigned to, milestone, labels
 
   As the name suggest, issues are often used to file about things that are wrong or things
-  that are broken. But this doesn't have to always be the case, it can be used as a project
+  that are broken. But this doesn't have to always be the case, it can be used a project
   management tool to track progression towards a larger milestone as well as what someone
   is specifically working on. In the past I would often create issues of my daily or weekly
   items and assign them priority tags and work towards a milestone for the end of a sprint.
