@@ -178,7 +178,7 @@ prefered method of collaboration with any project I'm working on.
   * Issue structure: assigned to, milestone, labels
 
   As the name suggest, issues are often used to file about things that are wrong or things
-  that are broken. But this doesn't have to always be the case, it can be used a project
+  that are broken. But this doesn't have to always be the case, it can be used as a project
   management tool to track progression towards a larger milestone as well as what someone
   is specifically working on. In the past I would often create issues of my daily or weekly
   items and assign them priority tags and work towards a milestone for the end of a sprint.
