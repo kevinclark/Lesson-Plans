@@ -4,13 +4,13 @@ unless otherwise specified.
 To follow along: `git clone https://github.com/brntbeer/teach.gitub.com` and navigate
 into the project from your terminal.
 
-#Git Log
+# Git Log
 Git log is a super valuable tool when keeping track of your project. From just getting
 a summary of who commited lately, to what was specifically commited, to even investigating
 for particular changes -- git log can be used to tell us many things.
 
 
-##Basics
+## Basics
 Starting out, it's important to understand how we can limit the number of commits that we
 are shown. In some bigger projects there can be hundreds or thousands of commits, and most
 of those we don't care about.
@@ -43,7 +43,7 @@ summary, often we want to filter these results even more before we start digging
 content.
 
 
-##Filtering results
+## Filtering results
 
 * `git log --author="brent"`
   * find commits only authored by a given person
@@ -81,7 +81,7 @@ appropriately get an idea of which commits included those renames. Using an addi
 flag of `-p` allows me to actually see those renames.
 
 
-##Viewing Content
+## Viewing Content
 
 * `git log -1 --stat`
 
@@ -162,7 +162,7 @@ We can see with `--word-diff` that Git actually knows this change was really cha
 that same line.
 
 
-#GitHub Collaboration
+# GitHub Collaboration
 [Ed Note: `git checkout collaboration-testing` before running through these examples, as
 some of these only exist on that branch from @brntbeer's repo]
 
